@@ -1,0 +1,29 @@
+# Records all mouse + keyboard events. Default stop = esc
+    # def rec(self, stop="esc"):
+    #     self.events = []
+    #     m.hook(self.events.append)
+    #     kb.hook(self.events.append)
+    #     kb.wait(stop)
+    #     m.unhook(self.events.append)
+    #     kb.unhook(self.events.append)
+
+    #     with open(self.e_file, "w") as f:
+    #         f.write("")
+    #         for data in self.events:
+    #             f.write(f"{data}\n")
+    #         f.close()
+
+    # Plays recorded events
+    # def play(self):
+    #     time.sleep(1)
+    #     # mouse.move(self.mouse_pos[0], self.mouse_pos[1])
+    #     if os.path.isfile(f"{os.getcwd}\\{self.e_file}"):
+    #         with open(self.e_file, "r") as f:
+    #             for l in f:
+    #                 if "MoveEvent" in l or "ButtonEvent" in l:
+    #                     m.play(l)
+    #                 elif "KeyboardEvent" in l:
+    #                     kb.play(l)
+    #             f.close()
+    #     else:
+    #         print("File not found.")

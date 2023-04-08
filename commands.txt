@@ -1,0 +1,6 @@
+
+
+repeat 3 3
+mv 1 1
+sleep 1
+mv 700 500
