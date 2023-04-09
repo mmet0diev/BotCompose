@@ -241,7 +241,7 @@ def run():
         elif top_lvl_cmd == "h" or top_lvl_cmd == "help":
             h()
         elif top_lvl_cmd == "q" or top_lvl_cmd == "quit" or top_lvl_cmd == "exit":
-            print("Exited\n.")
+            print("Exited\n")
             exit()
         else:
             print('.')
