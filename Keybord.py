@@ -18,6 +18,7 @@ class KB:
 
     # Press a given btn
     def press(self, btn: str):
+        time.sleep(0.1)
         kb.press(btn)
         kb.release(btn)
 
