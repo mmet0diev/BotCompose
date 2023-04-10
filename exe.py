@@ -131,7 +131,7 @@ def manual_input():
     cmd = ""
     print("Manual commands input:\n [s | q | stop] to stop manual mode.\n")
     while True:
-        cmd = input(">> ")
+        cmd = input("manual> ")
         try:
             cmds = cmd.strip().split(" ")
             func = cmds[0]
