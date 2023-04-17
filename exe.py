@@ -215,11 +215,11 @@ def run():
 
         if top_lvl_cmd == "f" or top_lvl_cmd == "file":
             try:
-                src_file = input("Enter src file / file path:\n").lower()
+                src_file = input("Enter src file / file path:\n").strip().lower()
                 if os.path.isfile(f"{src_file}"):
                     read_from_file(src_file)
             except Exception:
-                print('.')
+                print(f'{Exception}')
         elif top_lvl_cmd == "recmouse":
             print("Recording mouse.\nPress 'esc'(default) to stop.")
             bot.rec_mouse()
@@ -266,8 +266,10 @@ def h():
     print(
         "options:"
         "f, file - read commands from a src .txt file\n"
-        "r, rec - start recording mouse/keyboard events\n"
-        "p, play - play the events from (default)'recorded_events.txt'\n"
+        "recmouse - start recording mouse events\n"
+        "reckb - start recording keyboard events\n"
+        "playmouse - replay recorded mouse events\n"
+        "playkb - replay recorded keyboard events\n"
         "m, man - enter commands manually(similar to running python intractive terminal)\n"
         "h, help - Display general info about the tool\n"
     )
