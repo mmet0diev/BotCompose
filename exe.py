@@ -173,7 +173,7 @@ def manual_input():
                     case "sleep":
                         secs = float(args[0])
                         bot.sleep(secs)
-                    case "rep":
+                    case "repeat":
                         if len(args) < 1:
                             print("..")
                         elif args[0].isdigit():
