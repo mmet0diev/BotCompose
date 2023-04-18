@@ -32,6 +32,7 @@ class KB:
 
     # Press and release a sequence of keys/btns
     def wrt(self, text: str, d: int = 0.1):
+        time.sleep(1)
         kb.write(text, delay=d)
 
     def clear_file(self, file_path: str):

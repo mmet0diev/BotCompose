@@ -98,7 +98,7 @@ class Mouse:
     def play(self):
         time.sleep(1)
         m.move(x=self.pos[0], y=self.pos[1])
-        m.play(self.events, speed_factor=1)
+        m.play(self.events, speed_factor=2)
 
 
     def __str__(self) -> str:
