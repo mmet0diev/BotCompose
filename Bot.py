@@ -6,11 +6,12 @@ import os
 
 class Model:
     # mouse_pos: tuple
-    comp_name: str
-    kb: KB
-    m: Mouse
-    events: list
+    # comp_name: str
+    # kb: KB
+    # m: Mouse
+    # events: list
 
+    # Model/Bot constructor
     def __init__(self,
                  comp_name="Bot",
                  events=[],
@@ -131,19 +132,22 @@ class Model:
                 else:
                     index += 1
 
-    
+    # Call the record function from the Mouse
     def rec_mouse(self):
         self.m.record()
 
+    # Call the play function from the Mouse
     def play_mouse(self):
         self.m.play()
 
+    # Call the record function from KB
     def rec_kb(self):
         self.kb.record()
 
+    # Call the play function from KB
     def play_kb(self):
         self.kb.play()
 
-
+    # toString for Model (Bot)
     def __str__(self) -> str:
         return f"Component: {self.comp_name}"

@@ -239,7 +239,7 @@ def run():
         elif top_lvl_cmd == "m" or top_lvl_cmd == "man":
             manual_input()
         elif top_lvl_cmd == "h" or top_lvl_cmd == "help":
-            h()
+            help()
         elif top_lvl_cmd == "q" or top_lvl_cmd == "quit" or top_lvl_cmd == "exit":
             print("Exited\n")
             exit()
@@ -248,7 +248,7 @@ def run():
 
 
 # The help "menu":
-def h():
+def help():
     print('\nWelcome to the help menu\n"'
           'Bot Compose" is a python program designed to "compose" "bots" and automate various tasks\n'
           'Using this tool, the user is able to control the mouse/keyboard in various ways using the\n'

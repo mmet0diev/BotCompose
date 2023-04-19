@@ -6,8 +6,9 @@ import os
 
 class Mouse:
 
+    # The Mouse constructor
     def __init__(self, 
-                 comp_name="mouse", 
+                 comp_name="Mouse", 
                  events=[], 
                  output_file="mouse_events.txt") -> None:
         self.comp_name = comp_name
@@ -69,23 +70,23 @@ class Mouse:
         if m.is_pressed(btn):
             m.release(btn)
 
-
+    # Write to mouse events output.txt file
     def write_to_file(self):
         with open(self.output_file, 'w') as f:
             for evs in self.events:
                 f.write(f"{evs}\n")
             f.close()
 
-
+    # Clear the current output.txt contents
     def clear_file(self, file_path):
         open(file_path, 'w').close()
 
-
+    # Stop recording the mouse events
     def stop_recording(self):
         kb.wait('esc')
         m.unhook_all()
 
-
+    # Record the mouse events
     def record(self):
         self.events = []
         self.clear_file(self.output_file)
@@ -94,13 +95,13 @@ class Mouse:
         self.stop_recording()
         self.write_to_file()
 
-
+    # Play the mouse events
     def play(self):
         time.sleep(1)
         m.move(x=self.pos[0], y=self.pos[1])
         m.play(self.events, speed_factor=2)
 
-
+    # toString of Mouse
     def __str__(self) -> str:
          return f"Component: {self.comp_name}"
     
