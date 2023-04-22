@@ -183,6 +183,22 @@ def manual_input():
                             bot.mouse_rel(btn=btn)
                         elif comp == 'kb':
                             bot.kb_rel(btn=btn)
+                    case "drag":
+                        if(len(args) == 4):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            bot.drag(x1, y1, x2, y2)
+                        elif(len(args) == 5):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            dur = int(args[4])
+                            bot.drag(x1, y1, x2, y2, dur)
+                        else:
+                            print("Invalid arguments passed.")
                     case "wrt":
                         text = " ".join(args)
                         bot.wrt(text)
@@ -231,7 +247,7 @@ def run():
 
         if top_lvl_cmd == "f" or top_lvl_cmd == "file":
             try:
-                src_file = input("Enter src file / file path:\n").strip().lower()
+                src_file = input("Enter src file:\nfile path> ").strip().lower()
                 if os.path.isfile(f"{src_file}"):
                     read_from_file(src_file)
             except Exception:
