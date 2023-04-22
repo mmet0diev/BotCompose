@@ -69,6 +69,11 @@ class Mouse:
     def rel(self, btn: str):
         if m.is_pressed(btn):
             m.release(btn)
+    
+    # Drag the mouse from starting point (x1, y2) to end point (x2, y2)
+    def drag(self, x1, y1, x2, y2, dur=1):
+        time.sleep(0.5)
+        m.drag(start_x=x1, start_y=y1, end_x=x2, end_y=y2, absolute=True, duration=dur)
 
     # Write to mouse events output.txt file
     def write_to_file(self):
