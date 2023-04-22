@@ -77,10 +77,11 @@ class Mouse:
 
     # Write to mouse events output.txt file
     def write_to_file(self):
-        with open(self.output_file, 'w') as f:
-            for evs in self.events:
-                f.write(f"{evs}\n")
-            f.close()
+        if os.path.isfile(self.output_file):
+            with open(self.output_file, 'w') as f:
+                for evs in self.events:
+                    f.write(f"{evs}\n")
+                f.close()
 
     # Clear the current output.txt contents
     def clear_file(self, file_path):
@@ -104,7 +105,8 @@ class Mouse:
     def play(self):
         time.sleep(1)
         m.move(x=self.pos[0], y=self.pos[1])
-        m.play(self.events, speed_factor=2)
+        m.play(self.events, speed_factor=1)
+        # self.clear_file(self.output_file)
 
     # toString of Mouse
     def __str__(self) -> str:

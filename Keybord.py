@@ -31,6 +31,8 @@ class KB:
         time.sleep(1)
         kb.write(text, delay=d)
 
+    
+
     # Clear the KB file contents
     def clear_file(self, file_path: str):
         if os.path.isfile(file_path):
