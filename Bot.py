@@ -5,11 +5,6 @@ import os
 
 
 class Model:
-    # mouse_pos: tuple
-    # comp_name: str
-    # kb: KB
-    # m: Mouse
-    # events: list
 
     # Model/Bot constructor
     def __init__(self,
@@ -79,6 +74,7 @@ class Model:
 
     # Repeats a sequence of commands
     def repeat(self, commands: list[str] = [], reps: int = 2, n_lines: int = 1, start_index: int = 0):
+        time.sleep(1)
         for i in range(reps):
             index = start_index
             while index < len(commands):
