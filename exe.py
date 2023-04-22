@@ -66,6 +66,22 @@ def read_from_file(src_file: str):
                     case "rel":
                         key = args[0]
                         bot.rel(key)
+                    case "drag":
+                        if(len(args) == 4):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            bot.drag(x1, y1, x2, y2)
+                        elif(len(args) == 5):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            dur = int(args[4])
+                            bot.drag(x1, y1, x2, y2, dur)
+                        else:
+                            print("Invalid arguments passed.")
                     case "wrt":
                         text = " ".join(args)
                         bot.wrt(text)

@@ -45,6 +45,10 @@ class Model:
     # Hold a given mouse btn
     def mouse_hld(self, btn: str):
         self.m.hld(btn=btn)
+    
+    # Drag the mouse to chosen coords
+    def drag(self, x1, y1, x2, y2, dur):
+        self.m.drag(x1=x1, y1=y1, x2=x2, y2=y2, dur=dur)
 
     # Release a given mouse btn
     def mouse_rel(self, btn: str):
