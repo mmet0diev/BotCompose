@@ -1,11 +1,13 @@
-from Bot import Model
 import os
+import sys
+# Add the path to the Models directory to the system path
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(dir_path, "Models"))
+
+from Models.Bot import BotModel
 
 # Initialize a bot model
-bot = Model()
-
-# top_lvl_cmd: str
-# f_path = "commands.txt"
+bot = BotModel()
 
 
 def intro() -> str:

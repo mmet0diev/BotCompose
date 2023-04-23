@@ -3,7 +3,6 @@ import keyboard as kb
 import time
 import os
 
-
 class Mouse:
 
     # The Mouse constructor

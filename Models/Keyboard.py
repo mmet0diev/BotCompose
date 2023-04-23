@@ -2,11 +2,12 @@ import keyboard as kb
 import time
 import os
 
-
-class KB:
+class Keyboard:
 
     # The KB constructor
-    def __init__(self, comp_name="KB", events=[], output_file="txt/kb_events.txt") -> None:
+    def __init__(self, comp_name="KB", 
+                 events=[], 
+                 output_file="txt/kb_events.txt") -> None:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
@@ -66,3 +67,4 @@ class KB:
     # toString of KB
     def __str__(self) -> str:
          return f"Component: {self.comp_name}"
+    

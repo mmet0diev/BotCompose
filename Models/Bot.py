@@ -1,17 +1,15 @@
 import time
-from Keybord import KB
+from Keyboard import Keyboard
 from Mouse import Mouse
-import os
 
-
-class Model:
+class BotModel:
 
     # Model/Bot constructor
     def __init__(self,
                  comp_name="Bot",
                  events=[],
                  m = Mouse(),
-                 kb = KB()
+                 kb = Keyboard()
                  ) -> None:
 
         self.comp_name = comp_name
@@ -21,7 +19,7 @@ class Model:
 
 
     # Mouse controls:
-    # More of a testing func
+    # More of a testing function
     def getPos(self):
         return self.m.getPos()
 
