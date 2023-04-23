@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 exe.py $@
+python3 main.py $@

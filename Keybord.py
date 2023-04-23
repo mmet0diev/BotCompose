@@ -6,7 +6,7 @@ import os
 class KB:
 
     # The KB constructor
-    def __init__(self, comp_name="KB", events=[], output_file="kb_events.txt") -> None:
+    def __init__(self, comp_name="KB", events=[], output_file="txt/kb_events.txt") -> None:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
