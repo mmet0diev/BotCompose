@@ -2,22 +2,24 @@ import mouse as m
 import keyboard as kb
 import time
 import os
+import pyautogui as pag
+
 
 class Mouse:
 
     # The Mouse constructor
-    def __init__(self, 
-                 comp_name="Mouse", 
-                 events=[], 
+    def __init__(self,
+                 comp_name="Mouse",
+                 events=[],
                  output_file="txt/mouse_events.txt") -> None:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
         self.pos = m.get_position()
 
-
     # Mouse controls:
     # More of a testing func
+
     def getPos(self):
         return m.get_position()
 
@@ -68,11 +70,25 @@ class Mouse:
     def rel(self, btn: str):
         if m.is_pressed(btn):
             m.release(btn)
-    
+
     # Drag the mouse from starting point (x1, y2) to end point (x2, y2)
     def drag(self, x1, y1, x2, y2, dur=1):
         time.sleep(0.5)
-        m.drag(start_x=x1, start_y=y1, end_x=x2, end_y=y2, absolute=True, duration=dur)
+        m.drag(start_x=x1, start_y=y1, end_x=x2,
+               end_y=y2, absolute=True, duration=dur)
+
+    # Move the mouse and click an image
+    def clck_img(self, img: str):
+        time.sleep(1)
+        coords: tuple
+        try:
+            coords = pag.locateCenterOnScreen(img)
+            coords = pag.center(coords=coords)
+        except Exception:
+            print(f"Image {img} not found.")
+            return
+        m.move(coords[0], coords[1])
+        m.click()
 
     # Write to mouse events output.txt file
     def write_to_file(self):
@@ -109,5 +125,4 @@ class Mouse:
 
     # toString of Mouse
     def __str__(self) -> str:
-         return f"Component: {self.comp_name}"
-    
+        return f"Component: {self.comp_name}"
