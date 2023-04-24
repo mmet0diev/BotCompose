@@ -111,4 +111,3 @@ class Mouse:
     def __str__(self) -> str:
          return f"Component: {self.comp_name}"
     
-

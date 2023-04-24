@@ -32,8 +32,6 @@ class Keyboard:
         time.sleep(1)
         kb.write(text, delay=d)
 
-    
-
     # Clear the KB file contents
     def clear_file(self, file_path: str):
         if os.path.isfile(file_path):
@@ -63,6 +61,12 @@ class Keyboard:
     def play(self):
         time.sleep(1)
         kb.play(self.events)
+
+    # Check if a key is pressed
+    def check_key_pressed(self, key: str):
+        if kb.is_pressed(key):
+            return True
+        return False
 
     # toString of KB
     def __str__(self) -> str:

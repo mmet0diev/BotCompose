@@ -4,10 +4,10 @@ import sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 
-from Models.Bot import BotModel
+from Models.Bot import Bot
 
 # Initialize a bot model
-bot = BotModel()
+bot = Bot()
 
 
 def intro() -> str:

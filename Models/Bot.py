@@ -1,22 +1,35 @@
+import os
 import time
-from Keyboard import Keyboard
-from Mouse import Mouse
+from Models.Keyboard import Keyboard
+from Models.Mouse import Mouse
+import pyautogui as pag
 
-class BotModel:
+class Bot:
 
-    # Model/Bot constructor
-    def __init__(self,
-                 comp_name="Bot",
-                 events=[],
-                 m = Mouse(),
-                 kb = Keyboard()
-                 ) -> None:
+    imgs_path = os.path.join(os.getcwd(), "imgs")
 
+    # get initial number of image files in imgs folder
+    def get_imgs_num(self) -> int:
+        imgs_list = os.listdir(self.imgs_path)
+        return len(imgs_list)
+    
+    # Bot constructor
+    def __init__(
+        self,
+        comp_name="Bot",
+        events=[],
+        m=Mouse(),
+        kb=Keyboard(),
+        imgs_num=None
+    ) -> None:
         self.comp_name = comp_name
         self.events = events
         self.m = m
         self.kb = kb
-
+        if imgs_num is None:
+            self.imgs_num = self.get_imgs_num()
+        else:
+            self.imgs_num = imgs_num
 
     # Mouse controls:
     # More of a testing function
@@ -145,6 +158,10 @@ class BotModel:
     # Call the play function from KB
     def play_kb(self):
         self.kb.play()
+
+    def take_shot(self, trig: str):
+        pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
+        self.imgs_num+=1
 
     # toString for Model (Bot)
     def __str__(self) -> str:
