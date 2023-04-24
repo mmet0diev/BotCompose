@@ -82,7 +82,7 @@ class Mouse:
         time.sleep(1)
         coords: tuple
         try:
-            coords = pag.locateCenterOnScreen(img)
+            coords = pag.locateAllOnScreen(img, grayscale=True)
             coords = pag.center(coords=coords)
         except Exception:
             print(f"Image {img} not found.")
