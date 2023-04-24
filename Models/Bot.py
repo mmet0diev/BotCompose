@@ -159,7 +159,7 @@ class Bot:
     def play_kb(self):
         self.kb.play()
 
-    def take_shot(self, trig: str):
+    def take_shot(self):
         pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
         self.imgs_num+=1
 

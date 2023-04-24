@@ -90,6 +90,8 @@ def read_from_file(src_file: str):
                     case "sleep":
                         secs = float(args[0])
                         bot.sleep(secs)
+                    case "shoot":
+                        bot.take_shot()
                     case "repeat":
                         reps = int(args[0])  # parse the repetitions parameter
                         if len(args) > 1:
@@ -215,6 +217,8 @@ def manual_input():
                             bot.repeat(commands=cmds[2:], reps=r)
                         else:
                             bot.repeat(commands=cmds[1:])
+                    case "shoot":
+                        bot.take_shot()
                     case "pos":
                         print(bot.getPos())
                     case "q":
