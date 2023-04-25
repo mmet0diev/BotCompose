@@ -4,13 +4,17 @@ import os
 
 class Keyboard:
 
+    hotkeys = []
+
     # The KB constructor
     def __init__(self, comp_name="KB", 
                  events=[], 
-                 output_file="txt/kb_events.txt") -> None:
+                 output_file="txt/kb_events.txt",
+                 hotkeys = []) -> None:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
+        self.hotkeys = hotkeys
 
     # Press a given btn
     def press(self, btn: str):
@@ -68,7 +72,27 @@ class Keyboard:
             return True
         return False
 
+    # Add a hotkey
+    def add_hk(self, hk: str="h+k", callback=None, args=()):
+        if callback is None:
+            callback = lambda: print(self.__str__())
+        try:
+            kb.add_hotkey(hk, callback, args)
+            self.hotkeys.append(hk)
+            print(f"Added hotkey {hk}")
+        except ValueError:
+            print(f"Hotkey {hk} already added")
+
+    # Remove a hotkey
+    def rm_hk(self, hk: str):
+        try:
+            kb.remove_hotkey(hk)
+            self.hotkeys.remove(hk)
+            print(f"Removed hotkey {hk}")
+        except:
+            print(f"hotkey combo {hk} not added")
+
     # toString of KB
     def __str__(self) -> str:
-         return f"Component: {self.comp_name}"
+         return f"Component: {self.comp_name}\nAdded hotkeys:{self.hotkeys}"
     
