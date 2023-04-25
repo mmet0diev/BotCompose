@@ -94,5 +94,5 @@ class Keyboard:
 
     # toString of KB
     def __str__(self) -> str:
-         return f"Component: {self.comp_name}\nAdded hotkeys:{self.hotkeys}\n"
+         return f"Component: {self.comp_name}\nAdded hotkeys:{self.hotkeys}"
     
