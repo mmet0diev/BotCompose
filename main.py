@@ -1,6 +1,5 @@
 import os
 import sys
-import time as t
 # Add the path to the Models directory to the system path
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
@@ -152,6 +151,8 @@ def read_from_file(src_file: str):
                                     case "sleep":
                                         secs = float(args[0])
                                         bot.sleep(secs)
+                                    case "shoot":
+                                        bot.take_shot()
                                     case "repeat":
                                         print("Cannot nest more repeat commands")
                                     case _:
@@ -171,7 +172,6 @@ def manual_input():
     print("Manual commands input:\n [s | q | stop] to stop manual mode.\n")
     while True:
         cmd = input("manual> ")
-        t.sleep(1)
         try:
             cmds = cmd.strip().split(" ")
             func = cmds[0]
