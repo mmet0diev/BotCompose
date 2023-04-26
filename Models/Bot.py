@@ -92,8 +92,9 @@ class Bot:
         time.sleep(secs)
 
     # Repeats a sequence of commands
-    def repeat(self, commands: list[str] = [], reps: int = 2, n_lines: int = 1, start_index: int = 0):
+    def repeat(self, commands: list[str] = [], reps: int = 2, n_lines: int = 1):
         time.sleep(1)
+        start_index = 0
         for i in range(reps):
             index = start_index
             while index < len(commands):
@@ -124,9 +125,15 @@ class Bot:
                     self.press(key)
                     index += 2
                 elif cmd == "hld":
-                    key = commands[index + 1]
-                    self.hld(key)
-                    index += 2
+                    comp = commands[index + 1]
+                    if(comp == "mouse"):
+                        key = commands[index + 2]
+                        self.mouse_hld(key)
+                        index += 3
+                    elif comp == "kb":
+                        key = commands[index + 2]
+                        self.kb_hld(key)
+                        index += 3
                 elif cmd == "rel":
                     key = commands[index + 1]
                     self.rel(key)
