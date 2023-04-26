@@ -153,7 +153,7 @@ def read_from_file(src_file: str):
                                         secs = float(args[0])
                                         bot.sleep(secs)
                                     case "repeat":
-                                        print("Cannot nest repeat commands")
+                                        print("Cannot nest more repeat commands")
                                     case _:
                                         print(f"Invalid command: {func}")
                     case _:
