@@ -84,6 +84,7 @@ class Mouse:
         img_center: tuple
         if(img is not None):
             img_center = pag.center(img_location)
+            print(img_center)
         else:
             print("Image not found.")
         m.move(img_center[0], img_center[1])
