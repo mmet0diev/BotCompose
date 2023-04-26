@@ -1,5 +1,6 @@
 import os
 import sys
+import time as t
 # Add the path to the Models directory to the system path
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
@@ -72,8 +73,13 @@ def read_from_file(src_file: str):
                         key = args[0]
                         bot.rel(key)
                     case "clckimg":
-                        img_path = args[0]
-                        bot.clckimg(img_path)
+                        if len(args) == 1:
+                            img_path = args[0]
+                            bot.clckimg(img_path)
+                        elif len(args) == 2:
+                            img_path = args[0]
+                            btn = args[1]
+                            bot.clckimg(img_path, btn=btn)
                     case "drag":
                         if(len(args) == 4):
                             x1 = int(args[0])
@@ -159,6 +165,7 @@ def manual_input():
     print("Manual commands input:\n [s | q | stop] to stop manual mode.\n")
     while True:
         cmd = input("manual> ")
+        t.sleep(1)
         try:
             cmds = cmd.strip().split(" ")
             func = cmds[0]
@@ -243,7 +250,7 @@ def manual_input():
                     case "stop":
                         break
                     case _:
-                        print(f"Invalid command: {func}")
+                        print(f"Invalid command/syntax: {func}")
         except Exception as e:
             print(f"Invalid commands syntax:\n{e}")
 
