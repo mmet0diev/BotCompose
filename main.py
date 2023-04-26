@@ -67,8 +67,12 @@ def read_from_file(src_file: str):
                         key = args[0]
                         bot.press(key)
                     case "hld":
-                        key = args[0]
-                        bot.hld(key)
+                        comp = args[0]
+                        btn = args[1]
+                        if comp == 'mouse':
+                            bot.mouse_hld(btn=btn)
+                        elif comp == 'kb':
+                            bot.kb_hld(btn=btn)
                     case "rel":
                         key = args[0]
                         bot.rel(key)
@@ -111,7 +115,7 @@ def read_from_file(src_file: str):
                         bot.take_shot()
                     case "repeat":
                         reps = int(args[0])  # parse the repetitions parameter
-                        if len(args) > 1:
+                        if len(args) == 2:
                             lines_to_repeat = int(args[1])
                         sub_commands = []  # initialize the sub-commands list
                         for i in range(lines_to_repeat):  # read the next n lines of commands

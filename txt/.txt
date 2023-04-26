@@ -1,4 +1,4 @@
-repeat 34 2
+repeat 3 34
 sleep 15
 mvclck 1054 452 l
 sleep 1
