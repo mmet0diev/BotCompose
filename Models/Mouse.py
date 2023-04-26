@@ -84,7 +84,7 @@ class Mouse:
     def clck_img(self, img: str, btn: str="l"):
         time.sleep(0.2)
         try:
-            img_location = pag.locateOnScreen(img)
+            img_location = pag.locateOnScreen(img, confidence=0.5)
             img_center: tuple = None
             if(img is not None):
                 img_center = pag.center(img_location)
