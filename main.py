@@ -248,7 +248,6 @@ def run():
     )
     # main program loop
     while True:
-
         top_lvl_cmd = input("> ").lower().strip()
 
         if top_lvl_cmd == "f" or top_lvl_cmd == "file":

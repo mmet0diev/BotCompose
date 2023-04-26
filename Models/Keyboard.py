@@ -89,7 +89,7 @@ class Keyboard:
             kb.remove_hotkey(hk)
             self.hotkeys.remove(hk)
             print(f"Removed hotkey {hk}")
-        except:
+        except Exception:
             print(f"hotkey combo {hk} not added")
 
     # toString of KB
