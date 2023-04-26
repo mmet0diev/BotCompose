@@ -37,10 +37,13 @@ def intro() -> str:
 # Read commands from .txt file
 # C:\Users\maxur\Desktop\dsodaily1.txt
 def read_from_file(src_file: str):
+    print("Press 'esc' to stop command(s) execution.")
     reps = 1  # initialize the repetitions counter
     lines_to_repeat = 1 # initialize the number of lines to repeat
     with open(src_file, "r") as f:
         for line in f:
+            if bot.kb.check_key_pressed("esc"):
+                break
             if line != "":
                 cmds = line.strip().split(" ")
                 func = cmds[0]
@@ -68,6 +71,9 @@ def read_from_file(src_file: str):
                     case "rel":
                         key = args[0]
                         bot.rel(key)
+                    case "clckimg":
+                        img_path = args[0]
+                        bot.clckimg(img_path)
                     case "drag":
                         if(len(args) == 4):
                             x1 = int(args[0])
@@ -142,6 +148,7 @@ def read_from_file(src_file: str):
                         print(f"Invalid command: {func}")
             else:
                 print("Empty line")
+
         f.close()
 
     

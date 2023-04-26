@@ -5,7 +5,7 @@ from Models.Mouse import Mouse
 import pyautogui as pag
 
 class Bot:
-
+    # imgs folder path
     imgs_path = os.path.join(os.getcwd(), "imgs")
 
     # get initial number of image files in imgs folder
@@ -57,7 +57,7 @@ class Bot:
     # Hold a given mouse btn
     def mouse_hld(self, btn: str):
         self.m.hld(btn=btn)
-    
+
     # Drag the mouse to chosen coords
     def drag(self, x1, y1, x2, y2, dur):
         self.m.drag(x1=x1, y1=y1, x2=x2, y2=y2, dur=dur)
@@ -65,6 +65,10 @@ class Bot:
     # Release a given mouse btn
     def mouse_rel(self, btn: str):
         self.m.rel(btn=btn)
+
+    # Click imgage function (from Mouse)
+    def clckimg(self, img: str):
+        self.m.clck_img(img=img)
 
     # Hold a given keyboard btn
     def kb_hld(self, btn: str):
@@ -84,7 +88,6 @@ class Bot:
         self.kb.wrt(text=text, d=d)
 
     # Puts the bot in "sleep" for secs time
-
     def sleep(self, secs=2.0):
         time.sleep(secs)
 
@@ -160,13 +163,16 @@ class Bot:
     def play_kb(self):
         self.kb.play()
 
+    # Takes a screenshot and saves it to imgs folder
     def take_shot(self):
         pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
         self.imgs_num+=1
 
+    # Adds hotkey combination (h+k initially)
     def addhk(self, hk="h+k", callback=None, args=()):
         self.kb.add_hk(hk)
 
+    # Removes a hotkey combination(if present in hotkeys list in Keyboard)
     def rmhk(self, hk=""):
         self.kb.rm_hk(hk)
 

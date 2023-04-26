@@ -1,2 +1,3 @@
 
-
+sleep 1.5
+clckimg imgs/test1.png

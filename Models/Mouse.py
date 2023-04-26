@@ -26,6 +26,7 @@ class Mouse:
     # Move the mouse to xy
     def mv(self, x: int, y: int, dur=0):
         # print("mv called")
+        time.sleep(0.1)
         m.move(x, y, duration=dur)
 
     # Click a left, right, middle(scroll) mouse btn
@@ -60,10 +61,12 @@ class Mouse:
 
     # Scroll the scroller z units + for up - for down
     def scroll(self, z: int):
+        time.sleep(0.1)
         m.wheel(z)
 
     # Hold a given mouse btn
     def hld(self, btn: str):
+        time.sleep(0.1)
         m.press(btn)
 
     # Release a given mouse btn
@@ -79,14 +82,17 @@ class Mouse:
 
     # Move the mouse and click an image
     def clck_img(self, img: str):
-        time.sleep(1)
-        img_location = pag.locateOnScreen(img)
-        img_center: tuple
-        if(img is not None):
-            img_center = pag.center(img_location)
-            print(img_center)
-        else:
-            print("Image not found.")
+        time.sleep(0.2)
+        try:
+            img_location = pag.locateOnScreen(img)
+            img_center: tuple = None
+            if(img is not None):
+                img_center = pag.center(img_location)
+                print(img_center)
+            else:
+                print("Image not found.")
+        except:
+            pass
         m.move(img_center[0], img_center[1])
         m.click()
 
@@ -122,6 +128,7 @@ class Mouse:
         m.move(x=self.pos[0], y=self.pos[1])
         m.play(self.events, speed_factor=1)
         # self.clear_file(self.output_file)
+    
 
     # toString of Mouse
     def __str__(self) -> str:
