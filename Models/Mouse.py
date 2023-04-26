@@ -80,14 +80,13 @@ class Mouse:
     # Move the mouse and click an image
     def clck_img(self, img: str):
         time.sleep(1)
-        coords: tuple
-        try:
-            coords = pag.locateAllOnScreen(img, grayscale=True)
-            coords = pag.center(coords=coords)
-        except Exception:
-            print(f"Image {img} not found.")
-            return
-        m.move(coords[0], coords[1])
+        img_location = pag.locateOnScreen(img)
+        img_center: tuple
+        if(img is not None):
+            img_center = pag.center(img_location)
+        else:
+            print("Image not found.")
+        m.move(img_center[0], img_center[1])
         m.click()
 
     # Write to mouse events output.txt file
