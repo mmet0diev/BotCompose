@@ -44,6 +44,7 @@ def read_from_file(src_file: str):
     with open(src_file, "r") as f:
         for line in f:
             if bot.kb.check_key_pressed("esc"):
+                print("Execution stopped.")
                 break
             if line != "":
                 cmds = line.strip().split(" ")

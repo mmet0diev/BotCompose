@@ -1,5 +1,6 @@
 
-sleep 3
+repeat 33 3
+sleep 20
 mvclck 1054 452 l
 sleep 1
 mvclck 693 564 l
@@ -13,16 +14,16 @@ clck l
 sleep 2
 mvclck 1264 409 l
 sleep 1.5
-repeat 4 1
+repeat 6 l
 clck r
 sleep 10
 repeat 50 1
 clck r
-sleep 1
-repeat 10 2
-sleep 1
-clckimg txt/wisd.png l
-sleep 1
+sleep 2
+mvclck 1241 402 l
+sleep 2
+mvclck 619 588 l
+sleep 2
 mvclck 191 688 l
 sleep 2
 clck l
@@ -30,5 +31,5 @@ sleep 2
 mvclck 232 800 l
 sleep 2
 clckimg imgs/img1.png l
-sleep 2
-mvclck 693 564 l
+sleep 2.5
+mvclck 1333 832 l
