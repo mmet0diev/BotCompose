@@ -80,6 +80,11 @@ def read_from_file(src_file: str):
                             img_path = args[0]
                             btn = args[1]
                             bot.clckimg(img_path, btn=btn)
+                        elif len(args) == 3:
+                            img_path = args[0]
+                            btn = args[1]
+                            conf = args[2]
+                            bot.clckimg(img_path, btn=btn, conf=conf)
                     case "drag":
                         if(len(args) == 4):
                             x1 = int(args[0])
@@ -209,6 +214,11 @@ def manual_input():
                             img_path = args[0]
                             btn = args[1]
                             bot.clckimg(img_path, btn=btn)
+                        elif len(args) == 3:
+                            img_path = args[0]
+                            btn = args[1]
+                            conf = args[2]
+                            bot.clckimg(img_path, btn=btn, conf=conf)
                     case "drag":
                         if(len(args) == 4):
                             x1 = int(args[0])

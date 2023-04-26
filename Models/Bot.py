@@ -67,8 +67,8 @@ class Bot:
         self.m.rel(btn=btn)
 
     # Click imgage function (from Mouse)
-    def clckimg(self, img: str, btn="l"):
-        self.m.clck_img(img=img, btn=btn)
+    def clckimg(self, img: str, btn="l", conf=0.6):
+        self.m.clck_img(img=img, btn=btn, conf=conf)
 
     # Hold a given keyboard btn
     def kb_hld(self, btn: str):

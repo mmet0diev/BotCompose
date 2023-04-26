@@ -81,10 +81,10 @@ class Mouse:
                end_y=y2, absolute=True, duration=dur)
 
     # Move the mouse and click an image
-    def clck_img(self, img: str, btn: str="l"):
+    def clck_img(self, img: str, btn: str="l", conf=0.6):
         time.sleep(0.2)
         try:
-            img_location = pag.locateOnScreen(img, confidence=0.5)
+            img_location = pag.locateOnScreen(img, confidence=conf)
             img_center: tuple = None
             if(img is not None):
                 img_center = pag.center(img_location)
