@@ -194,6 +194,9 @@ def manual_input():
                             bot.mouse_rel(btn=btn)
                         elif comp == 'kb':
                             bot.kb_rel(btn=btn)
+                    case "clckimg":
+                        img_path = args[0]
+                        bot.clckimg(img_path)
                     case "drag":
                         if(len(args) == 4):
                             x1 = int(args[0])
