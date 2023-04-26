@@ -81,7 +81,7 @@ class Mouse:
                end_y=y2, absolute=True, duration=dur)
 
     # Move the mouse and click an image
-    def clck_img(self, img: str):
+    def clck_img(self, img: str, btn: str="l"):
         time.sleep(0.2)
         try:
             img_location = pag.locateOnScreen(img)
@@ -93,8 +93,7 @@ class Mouse:
                 print("Image not found.")
         except:
             pass
-        m.move(img_center[0], img_center[1])
-        m.click()
+        self.mvclck(img_center[0], img_center[1], btn=btn)
 
     # Write to mouse events output.txt file
     def write_to_file(self):
