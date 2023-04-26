@@ -240,8 +240,11 @@ def manual_input():
                         text = " ".join(args)
                         bot.wrt(text)
                     case "sleep":
-                        secs = float(args[0])
-                        bot.sleep(secs)
+                        if len(args) == 0:
+                            bot.sleep()
+                        elif len(args) == 1:
+                            secs = args[0]
+                            bot.sleep(secs=secs)
                     case "repeat":
                         if len(args) < 1:
                             print("..")
