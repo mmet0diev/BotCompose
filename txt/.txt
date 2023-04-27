@@ -4,8 +4,8 @@ mv 100 100
 sleep 1
 mv 200 200
 sleep 1
-mv 200 200
+mv 300 300
 sleep 1
-mv 200 200
+mv 400 400
 sleep 1
-mv 200 200
+mv 500 500
