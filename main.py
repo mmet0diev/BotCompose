@@ -250,11 +250,14 @@ def manual_input():
                             secs = args[0]
                             bot.sleep(secs=secs)
                     case "repeat":
-                        if len(args) == 1:
-                            bot.repeat(commands=cmds[1:])
-                        elif len(args) == 2:
-                            r = int(args[0])
-                            bot.repeat(commands=cmds[2:], reps=r)
+                        if len(args) > 0:
+                            if isinstance(args[0], int):
+                                r = int(args[0])
+                                bot.repeat(commands=cmds[2:], reps=r)
+                            elif isinstance(args[0], str):
+                                bot.repeat(commands=cmds[1:])
+                        else:
+                            print("No command to repeat given")
                     case "shoot":
                         bot.take_shot()
                     case "pos":
