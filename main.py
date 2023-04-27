@@ -173,7 +173,7 @@ def read_from_file(src_file: str):
 # Manually issue commands from the terminal(similar to REPL / interactive mode)
 def manual_input():
     cmd = ""
-    print("Manual commands input:\n [s | q | stop] to stop manual mode.\n")
+    print("Manual commands input:\n [s | q | stop | quit] to stop manual mode.\n")
     while True:
         cmd = input("manual> ")
         try:
@@ -263,6 +263,8 @@ def manual_input():
                     case "pos":
                         print(bot.getPos())
                     case "q":
+                        break
+                    case "quit":
                         break
                     case "s":
                         break
