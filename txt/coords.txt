@@ -1,7 +1,54 @@
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
-Pressed mouse btn:left. Mouse coordinates: 505,404
+
+sleep 3
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
