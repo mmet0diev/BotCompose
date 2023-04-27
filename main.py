@@ -9,7 +9,6 @@ from Models.Bot import Bot
 # Initialize a bot model
 bot = Bot()
 
-
 def intro() -> str:
     return """
         ||]]]]]]])        ========      ===================
