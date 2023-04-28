@@ -114,17 +114,16 @@ def read_from_file(src_file: str):
                         bot.take_shot()
                     case "repeat":
                         reps = int(args[0])  # parse the repetitions parameter
-                        if len(args) == 2:
-                            lines_to_repeat = int(args[1])
-                        sub_commands = []  # initialize the sub-commands list
+                        lines_to_repeat = int(args[1])
+                        commands = []  # initialize the sub-commands list
                         for i in range(lines_to_repeat):  # read the next n lines of commands
-                            line = next(f).strip()
+                            line = next(f).strip() # read the current line as str
                             cmds = line.strip().split(" ")
                             func = cmds[0]
                             args = cmds[1:]
-                            sub_commands.append((func, args))
+                            commands.append((func, args))
                         for j in range(reps):  # repeat the sub-commands reps times
-                            for func, args in sub_commands:
+                            for func, args in commands:
                                 match func:
                                     case "mv":
                                         x, y = map(float, args)
@@ -161,7 +160,7 @@ def read_from_file(src_file: str):
                                     case _:
                                         print(f"Invalid command: {func}")
                     case _:
-                        print(f"Invalid command: {func}")
+                        print(f"Invalid command(s)/syntax: {func}")
             else:
                 print("Empty line")
 

@@ -91,9 +91,53 @@ class Bot:
     def sleep(self, secs=2.0):
         time.sleep(secs)
 
+    def repeat_lines(self, commands= None, reps: int = 2, n_lines: int = 1):
+        if commands is None:
+            commands = []
+        for j in range(reps):
+            for line in commands:
+                func, args = line[0], line[1:]
+                match func:
+                    case "mv":
+                        x, y = map(float, args)
+                        self.mv(x, y)
+                    case "clck":
+                        btn = args[0]
+                        self.clck(btn)
+                    case "mvclck":
+                        x, y = map(float, args[:2])
+                        btn = args[2]
+                        self.mvclck(x, y, btn)
+                    case "scroll":
+                        n = int(args[0])
+                        self.scroll(n)
+                    case "press":
+                        key = args[0]
+                        self.press(key)
+                    case "hld":
+                        key = args[0]
+                        self.hld(key)
+                    case "rel":
+                        key = args[0]
+                        self.rel(key)
+                    case "wrt":
+                        text = " ".join(args)
+                        self.wrt(text)
+                    case "sleep":
+                        secs = float(args[0])
+                        self.sleep(secs)
+                    case "shoot":
+                        self.take_shot()
+                    case "repeat":
+                        print("Cannot nest more repeat commands")
+                    case _:
+                        print(f"Invalid command: {func}")
+
     # Repeats a sequence of commands
-    def repeat(self, commands: list[str] = [], reps: int = 2, n_lines: int = 1):
+    def repeat(self, commands= None, reps: int = 2, n_lines: int = 1):
         time.sleep(1)
+        if commands is None:
+            commands = []
         start_index = 0
         for i in range(reps):
             index = start_index
