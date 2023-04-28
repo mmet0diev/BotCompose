@@ -111,52 +111,55 @@ def read_from_file(src_file: str):
                     case "shoot":
                         bot.take_shot()
                     case "repeat":
-                        commands = []  # initialize the repeated commands list
-                        reps = int(args[0])  # parse the repetitions parameter
-                        lines = int(args[1])
-                        for i in range(lines):  # read the next n lines of commands
-                            line = next(f).strip() # read the current line as str
-                            cmd2 = line.strip().split(" ")
-                            func = cmd2[0]
-                            args = cmd2[1:]
-                            commands.append((func, args))
-                        for j in range(reps):  # repeat the commands reps times
-                            for func, args in commands:
-                                match func:
-                                    case "mv":
-                                        x, y = map(float, args)
-                                        bot.mv(x, y)
-                                    case "clck":
-                                        btn = args[0]
-                                        bot.clck(btn)
-                                    case "mvclck":
-                                        x, y = map(float, args[:2])
-                                        btn = args[2]
-                                        bot.mvclck(x, y, btn)
-                                    case "scroll":
-                                        n = int(args[0])
-                                        bot.scroll(n)
-                                    case "press":
-                                        key = args[0]
-                                        bot.press(key)
-                                    case "hld":
-                                        key = args[0]
-                                        bot.hld(key)
-                                    case "rel":
-                                        key = args[0]
-                                        bot.rel(key)
-                                    case "wrt":
-                                        text = " ".join(args)
-                                        bot.wrt(text)
-                                    case "sleep":
-                                        secs = float(args[0])
-                                        bot.sleep(secs)
-                                    case "shoot":
-                                        bot.take_shot()
-                                    case "repeat":
-                                        print("Cannot nest more repeat commands")
-                                    case _:
-                                        print(f"Invalid command: {func}")
+                        reps = int(args[0])
+                        next_lines = int(args[1])
+                        bot.repeat_lines(f=f, reps=reps, n_lines=next_lines)
+                        # commands = []  # initialize the repeated commands list
+                        # reps = int(args[0])  # parse the repetitions parameter
+                        # lines = int(args[1])
+                        # for i in range(lines):  # read the next n lines of commands
+                        #     line = next(f).strip() # read the current line as str
+                        #     cmd2 = line.strip().split(" ")
+                        #     func = cmd2[0]
+                        #     args = cmd2[1:]
+                        #     commands.append((func, args))
+                        # for j in range(reps):  # repeat the commands reps times
+                        #     for func, args in commands:
+                        #         match func:
+                        #             case "mv":
+                        #                 x, y = map(float, args)
+                        #                 bot.mv(x, y)
+                        #             case "clck":
+                        #                 btn = args[0]
+                        #                 bot.clck(btn)
+                        #             case "mvclck":
+                        #                 x, y = map(float, args[:2])
+                        #                 btn = args[2]
+                        #                 bot.mvclck(x, y, btn)
+                        #             case "scroll":
+                        #                 n = int(args[0])
+                        #                 bot.scroll(n)
+                        #             case "press":
+                        #                 key = args[0]
+                        #                 bot.press(key)
+                        #             case "hld":
+                        #                 key = args[0]
+                        #                 bot.hld(key)
+                        #             case "rel":
+                        #                 key = args[0]
+                        #                 bot.rel(key)
+                        #             case "wrt":
+                        #                 text = " ".join(args)
+                        #                 bot.wrt(text)
+                        #             case "sleep":
+                        #                 secs = float(args[0])
+                        #                 bot.sleep(secs)
+                        #             case "shoot":
+                        #                 bot.take_shot()
+                        #             case "repeat":
+                        #                 print("Cannot nest more repeat commands")
+                        #             case _:
+                        #                 print(f"Invalid command: {func}")
                     case _:
                         print(f"Invalid command(s)/syntax: {func}")
             else:

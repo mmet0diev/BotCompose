@@ -4,6 +4,7 @@ from Models.Keyboard import Keyboard
 from Models.Mouse import Mouse
 import pyautogui as pag
 
+
 class Bot:
     # imgs folder path
     imgs_path = os.path.join(os.getcwd(), "imgs")
@@ -12,7 +13,7 @@ class Bot:
     def get_imgs_num(self) -> int:
         imgs_list = os.listdir(self.imgs_path)
         return len(imgs_list)
-    
+
     # Bot constructor
     def __init__(
         self,
@@ -91,9 +92,56 @@ class Bot:
     def sleep(self, secs=2.0):
         time.sleep(secs)
 
+    def repeat_lines(self, f, reps, n_lines):
+        commands = []  # initialize the repeated commands list
+        # reps = int(args[0])  # parse the repetitions parameter
+        # lines = int(args[1])
+        for i in range(n_lines):  # read the next n lines of commands
+            line = next(f).strip()  # read the current line as str
+            cmd2 = line.strip().split(" ")
+            func = cmd2[0]
+            args = cmd2[1:]
+            commands.append((func, args))
+        for j in range(reps):  # repeat the commands reps times
+            for func, args in commands:
+                match func:
+                    case "mv":
+                        x, y = map(float, args)
+                        self.mv(x, y)
+                    case "clck":
+                        btn = args[0]
+                        self.clck(btn)
+                    case "mvclck":
+                        x, y = map(float, args[:2])
+                        btn = args[2]
+                        self.mvclck(x, y, btn)
+                    case "scroll":
+                        n = int(args[0])
+                        self.scroll(n)
+                    case "press":
+                        key = args[0]
+                        self.press(key)
+                    case "hld":
+                        key = args[0]
+                        self.hld(key)
+                    case "rel":
+                        key = args[0]
+                        self.rel(key)
+                    case "wrt":
+                        text = " ".join(args)
+                        self.wrt(text)
+                    case "sleep":
+                        secs = float(args[0])
+                        self.sleep(secs)
+                    case "shoot":
+                        self.take_shot()
+                    case "repeat":
+                        print("Cannot nest more repeat commands")
+                    case _:
+                        print(f"Invalid command: {func}")
 
     # Repeats a sequence of commands
-    def repeat(self, commands= None, reps: int = 2, n_lines: int = 1):
+    def repeat(self, commands=None, reps: int = 2, n_lines: int = 1):
         time.sleep(1)
         if commands is None:
             commands = []
@@ -129,7 +177,7 @@ class Bot:
                     index += 2
                 elif cmd == "hld":
                     comp = commands[index + 1]
-                    if(comp == "mouse"):
+                    if (comp == "mouse"):
                         key = commands[index + 2]
                         self.mouse_hld(key)
                         index += 3
@@ -158,7 +206,8 @@ class Bot:
                 elif cmd == "repeat":
                     sub_commands = commands[index + 1:index + 1 + n_lines]
                     sub_reps = int(commands[index + 1 + n_lines])
-                    self.repeat(sub_commands, reps=sub_reps, n_lines=n_lines, start_index=index+1)
+                    self.repeat(sub_commands, reps=sub_reps,
+                                n_lines=n_lines, start_index=index+1)
                     index += n_lines + 2
                 else:
                     index += 1
@@ -182,7 +231,7 @@ class Bot:
     # Takes a screenshot and saves it to imgs folder
     def take_shot(self):
         pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
-        self.imgs_num+=1
+        self.imgs_num += 1
 
     # Adds hotkey combination (h+k initially)
     def addhk(self, hk="h+k", callback=None, args=()):
