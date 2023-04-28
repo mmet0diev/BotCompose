@@ -45,9 +45,9 @@ def read_from_file(src_file: str):
                 print("Execution stopped.")
                 break
             if line != "":
-                cmds = line.strip().split(" ")
-                func = cmds[0]
-                args = cmds[1:]
+                cmd1 = line.strip().split(" ")
+                func = cmd1[0]
+                args = cmd1[1:]
                 match func:
                     case "mv":
                         x, y = map(float, args)
@@ -113,16 +113,17 @@ def read_from_file(src_file: str):
                     case "shoot":
                         bot.take_shot()
                     case "repeat":
+                        commands = []  # initialize the commands list
                         reps = int(args[0])  # parse the repetitions parameter
-                        lines_to_repeat = int(args[1])
-                        commands = []  # initialize the sub-commands list
-                        for i in range(lines_to_repeat):  # read the next n lines of commands
+                        lines = int(args[1])
+                        for i in range(lines):  # read the next n lines of commands
                             line = next(f).strip() # read the current line as str
-                            cmds = line.strip().split(" ")
-                            func = cmds[0]
-                            args = cmds[1:]
+                            cmd2 = line.strip().split(" ")
+                            func = cmd2[0]
+                            args = cmd2[1:]
                             commands.append((func, args))
-                        for j in range(reps):  # repeat the sub-commands reps times
+                        # bot.repeat_lines(commands, reps, lines)
+                        for j in range(reps):  # repeat the commands reps times
                             for func, args in commands:
                                 match func:
                                     case "mv":

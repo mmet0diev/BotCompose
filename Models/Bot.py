@@ -91,7 +91,7 @@ class Bot:
     def sleep(self, secs=2.0):
         time.sleep(secs)
 
-    def repeat_lines(self, commands= None, reps: int = 2, n_lines: int = 1):
+    def repeat_lines(self, commands= None, reps: int = 2, lines: int = 1):
         if commands is None:
             commands = []
         for j in range(reps):
