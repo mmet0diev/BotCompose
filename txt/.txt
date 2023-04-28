@@ -1,4 +1,10 @@
 
-repeat 15 2
-sleep 0.5
-clck l
+repeat 5 8
+sleep 1
+mv 1 1
+sleep 1
+mv 100 100
+sleep 1
+mv 300 300
+sleep 1
+mv 500 600

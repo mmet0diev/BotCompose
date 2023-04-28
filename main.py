@@ -37,8 +37,6 @@ def intro() -> str:
 # C:\Users\maxur\Desktop\dsodaily1.txt
 def read_from_file(src_file: str):
     print("Press 'esc' to stop command(s) execution.")
-    reps = 1  # initialize the repetitions counter
-    lines_to_repeat = 1 # initialize the number of lines to repeat
     with open(src_file, "r") as f:
         for line in f:
             if bot.kb.check_key_pressed("esc"):
@@ -113,7 +111,7 @@ def read_from_file(src_file: str):
                     case "shoot":
                         bot.take_shot()
                     case "repeat":
-                        commands = []  # initialize the commands list
+                        commands = []  # initialize the repeated commands list
                         reps = int(args[0])  # parse the repetitions parameter
                         lines = int(args[1])
                         for i in range(lines):  # read the next n lines of commands
@@ -122,7 +120,6 @@ def read_from_file(src_file: str):
                             func = cmd2[0]
                             args = cmd2[1:]
                             commands.append((func, args))
-                        # bot.repeat_lines(commands, reps, lines)
                         for j in range(reps):  # repeat the commands reps times
                             for func, args in commands:
                                 match func:
@@ -167,7 +164,6 @@ def read_from_file(src_file: str):
 
         f.close()
 
-    
 
 # Manually issue commands from the terminal(similar to REPL / interactive mode)
 def manual_input():
