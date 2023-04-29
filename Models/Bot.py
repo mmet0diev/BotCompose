@@ -92,6 +92,7 @@ class Bot:
     def sleep(self, secs=2.0):
         time.sleep(secs)
 
+    # File mode repeat
     def repeat_lines(self, f, reps, n_lines):
         commands = []  # initialize the repeated commands list
         for i in range(n_lines):  # read the next n lines of commands
@@ -177,111 +178,92 @@ class Bot:
                     case _:
                         print(f"Invalid command(s)/syntax: {func}")
 
-    # Repeats a sequence of commands
-    def repeat(self, commands=None, reps: int = 2, n_lines: int = 1):
+    # Manual mode repeat (more of a testing function)
+    def repeat_man(self, command: list, reps: int = 2):
         time.sleep(1)
-        if commands is None:
-            commands = []
-        start_index = 0
+        parts = command
         for i in range(reps):
-            index = start_index
-            while index < len(commands):
-                cmd = commands[index]
+            index = 0
+            while index < len(parts):
+                cmd = parts[index]
                 if cmd == "mv":
-                    coords = (commands[index + 1], commands[index + 2])
+                    coords = (parts[index + 1], parts[index + 2])
                     x = float(coords[0])
                     y = float(coords[1])
                     self.mv(x=x, y=y)
                     index += 3
                 elif cmd == "clck":
-                    btn = commands[index + 1]
+                    btn = parts[index + 1]
                     self.clck(btn=btn)
                     index += 2
                 elif cmd == "mvclck":
-                    coords = (commands[index + 1], commands[index + 2])
+                    coords = (parts[index + 1], parts[index + 2])
                     x = float(coords[0])
                     y = float(coords[1])
-                    btn = commands[index + 3]
+                    btn = parts[index + 3]
                     self.mvclck(x=x, y=y, btn=btn)
                     index += 4
                 elif cmd == "scroll":
-                    n = int(commands[index + 1])
+                    n = int(parts[index + 1])
                     self.scroll(n)
                     index += 2
                 elif cmd == "press":
-                    key = commands[index + 1]
+                    key = parts[index + 1]
                     self.press(key)
                     index += 2
                 elif cmd == "hld":
-                    comp = commands[index + 1]
+                    comp = parts[index + 1]
                     if (comp == "mouse"):
-                        key = commands[index + 2]
+                        key = parts[index + 2]
                         self.mouse_hld(key)
                         index += 3
                     elif comp == "kb":
-                        key = commands[index + 2]
-                        self.kb_hld(key)
-                        index += 3
-                elif cmd == "rel":
-                    comp = commands[index + 1]
-                    if comp == "mouse":
-                        key = commands[index + 2]
-                        self.mouse_rel(key)
+                        secs = float(parts[index + 1])
+                        self.sleep(secs)
                         index += 2
-                    elif comp == "kb":
-                        key = commands[index + 2]
-                        self.kb_rel(key)
-                        index += 2
-                elif cmd == "wrt":
-                    text = " ".join(commands[index + 1:])
-                    self.wrt(text)
-                    break
-                elif cmd == "sleep":
-                    secs = float(commands[index + 1])
-                    self.sleep(secs)
-                    index += 2
                 elif cmd == "drag":
-                    if(len(commands) == 4):
-                        x1 = int(commands[0])
-                        y1 = int(commands[1])
-                        x2 = int(commands[2])
-                        y2 = int(commands[3])
+                    if(len(parts) == 4):
+                        x1 = int(parts[0])
+                        y1 = int(parts[1])
+                        x2 = int(parts[2])
+                        y2 = int(parts[3])
                         self.drag(x1, y1, x2, y2)
                         index+=4
-                    elif(len(commands) == 5):
-                        x1 = int(commands[0])
-                        y1 = int(commands[1])
-                        x2 = int(commands[2])
-                        y2 = int(commands[3])
-                        dur = int(commands[4])
+                    elif(len(parts) == 5):
+                        x1 = int(parts[0])
+                        y1 = int(parts[1])
+                        x2 = int(parts[2])
+                        y2 = int(parts[3])
+                        dur = int(parts[4])
                         self.drag(x1, y1, x2, y2, dur)
                         index+=5
                     else:
                         print("Invalid arguments passed.")
                 elif cmd == "clckimg":
-                    if len(commands) == 2:
-                        img_path = commands[index+1]
+                    if len(parts) == 2:
+                        img_path = parts[index+1]
                         self.clckimg(img=img_path)
                         index+=2
-                    elif len(commands) == 3:
-                        img_path = commands[index+1]
-                        btn = commands[index+2]
+                    elif len(parts) == 3:
+                        img_path = parts[index+1]
+                        btn = parts[index+2]
                         self.clckimg(img=img_path, btn=btn)
                         index+=3
-                    elif len(commands) == 4:
-                        img_path = commands[index+1]
-                        btn = commands[index+2]
-                        conf = commands[index+3]
+                    elif len(parts) == 4:
+                        img_path = parts[index+1]
+                        btn = parts[index+2]
+                        conf = parts[index+3]
                         self.clckimg(img=img_path, btn=btn, conf=conf)
                         index+=4
                     else:
                         print("Invalid number of args.")
                 elif cmd == "repeat":
-                    sub_commands = commands[index + 1:index + 1 + n_lines]
-                    sub_reps = int(commands[index + 1 + n_lines])
-                    self.repeat(sub_commands, reps=sub_reps,
-                                n_lines=n_lines, start_index=index+1)
-                    index += n_lines + 2
+                    print("Cannot nest repeats in man mode.")
+                    # sub_commands = parts[index + 1:index + 1 + n_lines]
+                    # sub_reps = int(parts[index + 1 + n_lines])
+                    # self.repeat(sub_commands, reps=sub_reps,
+                    #             n_lines=n_lines, start_index=index+1)
+                    # index += n_lines + 2
                 else:
                     index += 1
 

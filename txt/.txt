@@ -1,7 +1,4 @@
 
-repeat 4 3
+repeat 5 2
 sleep 1
-mvclck 500 600 l
-repeat 1 2
-sleep 1
-mv clck 200 300 l
+drag 100 100 500 600 2
