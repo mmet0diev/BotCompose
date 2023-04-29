@@ -259,13 +259,11 @@ class Bot:
                         print("Invalid number of args.")
                 elif cmd == "repeat":
                     print("Cannot nest repeats in man mode.")
-                    # sub_commands = parts[index + 1:index + 1 + n_lines]
-                    # sub_reps = int(parts[index + 1 + n_lines])
-                    # self.repeat(sub_commands, reps=sub_reps,
-                    #             n_lines=n_lines, start_index=index+1)
-                    # index += n_lines + 2
                 else:
                     index += 1
+                # Stop the loop if necessary
+                if self.kb.check_key_pressed("esc"):
+                    break
 
     # Call the record function from the Mouse
     def rec_mouse(self):
