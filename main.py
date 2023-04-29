@@ -71,8 +71,12 @@ def read_from_file(src_file: str):
                         elif comp == 'kb':
                             bot.kb_hld(btn=btn)
                     case "rel":
-                        key = args[0]
-                        bot.rel(key)
+                        comp = args[0]
+                        btn = args[1]
+                        if comp == 'mouse':
+                            bot.mouse_rel(btn=btn)
+                        elif comp == 'kb':
+                            bot.kb_rel(btn=btn)
                     case "clckimg":
                         if len(args) == 1:
                             img_path = args[0]

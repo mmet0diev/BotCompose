@@ -94,13 +94,11 @@ class Bot:
 
     def repeat_lines(self, f, reps, n_lines):
         commands = []  # initialize the repeated commands list
-        # reps = int(args[0])  # parse the repetitions parameter
-        # lines = int(args[1])
         for i in range(n_lines):  # read the next n lines of commands
             line = next(f).strip()  # read the current line as str
-            cmd2 = line.strip().split(" ")
-            func = cmd2[0]
-            args = cmd2[1:]
+            cmd = line.strip().split(" ")
+            func = cmd[0]
+            args = cmd[1:]
             commands.append((func, args))
         for j in range(reps):  # repeat the commands reps times
             for func, args in commands:
@@ -122,23 +120,105 @@ class Bot:
                         key = args[0]
                         self.press(key)
                     case "hld":
-                        key = args[0]
-                        self.hld(key)
+                        comp = args[0]
+                        if comp == "mouse":
+                            key = args[0]
+                            self.mouse_hld(key)
+                        if comp == "kb":
+                            key = args[0]
+                            self.kb_hld(key)
                     case "rel":
-                        key = args[0]
-                        self.rel(key)
+                        comp = args[0]
+                        if comp == "mouse":
+                            key = args[0]
+                            self.mouse_rel(key)
+                        if comp == "kb":
+                            key = args[0]
+                            self.kb.rel(key)
                     case "wrt":
                         text = " ".join(args)
                         self.wrt(text)
                     case "sleep":
                         secs = float(args[0])
                         self.sleep(secs)
+                    case "drag":
+                        if(len(args) == 4):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            self.drag(x1, y1, x2, y2)
+                        elif(len(args) == 5):
+                            x1 = int(args[0])
+                            y1 = int(args[1])
+                            x2 = int(args[2])
+                            y2 = int(args[3])
+                            dur = int(args[4])
+                            self.drag(x1, y1, x2, y2, dur)
+                        else:
+                            print("Invalid arguments passed.")
+                    case "clckimg":
+                        if len(args) == 1:
+                            img_path = args[0]
+                            self.clckimg(img_path)
+                        elif len(args) == 2:
+                            img_path = args[0]
+                            btn = args[1]
+                            self.clckimg(img_path, btn=btn)
+                        elif len(args) == 3:
+                            img_path = args[0]
+                            btn = args[1]
+                            conf = args[2]
+                            self.clckimg(img_path, btn=btn, conf=conf)
                     case "shoot":
                         self.take_shot()
-                    case "repeat":
-                        print("Cannot nest more repeat commands")
+                    # Gotta add a nested repeat option here
+                    # case "repeat":
+                        # match func:
+                        #     case "mv":
+                        #         x, y = map(float, args)
+                        #         self.mv(x, y)
+                        #     case "clck":
+                        #         btn = args[0]
+                        #         self.clck(btn)
+                        #     case "mvclck":
+                        #         x, y = map(float, args[:2])
+                        #         btn = args[2]
+                        #         self.mvclck(x, y, btn)
+                        #     case "scroll":
+                        #         n = int(args[0])
+                        #         self.scroll(n)
+                        #     case "press":
+                        #         key = args[0]
+                        #         self.press(key)
+                        #     case "hld":
+                        #         comp = args[0]
+                        #         if comp == "mouse":
+                        #             key = args[0]
+                        #             self.mouse_hld(key)
+                        #         if comp == "kb":
+                        #             key = args[0]
+                        #             self.kb_hld(key)
+                        #     case "rel":
+                        #         comp = args[0]
+                        #         if comp == "mouse":
+                        #             key = args[0]
+                        #             self.mouse_rel(key)
+                        #         if comp == "kb":
+                        #             key = args[0]
+                        #             self.kb.rel(key)
+                        #     case "wrt":
+                        #         text = " ".join(args)
+                        #         self.wrt(text)
+                        #     case "sleep":
+                        #         secs = float(args[0])
+                        #         self.sleep(secs)
+                        #     case "shoot":
+                        #         self.take_shot()
+                        #     case "repeat":
+                        #         print("Maximum nested repeats is 2.")
                     case _:
-                        print(f"Invalid command: {func}")
+                        print(f"Invalid command(s)/syntax: {func}")
 
     # Repeats a sequence of commands
     def repeat(self, commands=None, reps: int = 2, n_lines: int = 1):
@@ -203,6 +283,42 @@ class Bot:
                     secs = float(commands[index + 1])
                     self.sleep(secs)
                     index += 2
+                elif cmd == "drag":
+                    if(len(commands) == 4):
+                        x1 = int(commands[0])
+                        y1 = int(commands[1])
+                        x2 = int(commands[2])
+                        y2 = int(commands[3])
+                        self.drag(x1, y1, x2, y2)
+                        index+=4
+                    elif(len(commands) == 5):
+                        x1 = int(commands[0])
+                        y1 = int(commands[1])
+                        x2 = int(commands[2])
+                        y2 = int(commands[3])
+                        dur = int(commands[4])
+                        self.drag(x1, y1, x2, y2, dur)
+                        index+=5
+                    else:
+                        print("Invalid arguments passed.")
+                elif cmd == "clckimg":
+                    if len(commands) == 2:
+                        img_path = commands[index+1]
+                        self.clckimg(img=img_path)
+                        index+=2
+                    elif len(commands) == 3:
+                        img_path = commands[index+1]
+                        btn = commands[index+2]
+                        self.clckimg(img=img_path, btn=btn)
+                        index+=3
+                    elif len(commands) == 4:
+                        img_path = commands[index+1]
+                        btn = commands[index+2]
+                        conf = commands[index+3]
+                        self.clckimg(img=img_path, btn=btn, conf=conf)
+                        index+=4
+                    else:
+                        print("Invalid number of args.")
                 elif cmd == "repeat":
                     sub_commands = commands[index + 1:index + 1 + n_lines]
                     sub_reps = int(commands[index + 1 + n_lines])
