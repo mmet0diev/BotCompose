@@ -172,51 +172,8 @@ class Bot:
                             self.clckimg(img_path, btn=btn, conf=conf)
                     case "shoot":
                         self.take_shot()
-                    # Gotta add a nested repeat option here
-                    # case "repeat":
-                        # match func:
-                        #     case "mv":
-                        #         x, y = map(float, args)
-                        #         self.mv(x, y)
-                        #     case "clck":
-                        #         btn = args[0]
-                        #         self.clck(btn)
-                        #     case "mvclck":
-                        #         x, y = map(float, args[:2])
-                        #         btn = args[2]
-                        #         self.mvclck(x, y, btn)
-                        #     case "scroll":
-                        #         n = int(args[0])
-                        #         self.scroll(n)
-                        #     case "press":
-                        #         key = args[0]
-                        #         self.press(key)
-                        #     case "hld":
-                        #         comp = args[0]
-                        #         if comp == "mouse":
-                        #             key = args[0]
-                        #             self.mouse_hld(key)
-                        #         if comp == "kb":
-                        #             key = args[0]
-                        #             self.kb_hld(key)
-                        #     case "rel":
-                        #         comp = args[0]
-                        #         if comp == "mouse":
-                        #             key = args[0]
-                        #             self.mouse_rel(key)
-                        #         if comp == "kb":
-                        #             key = args[0]
-                        #             self.kb.rel(key)
-                        #     case "wrt":
-                        #         text = " ".join(args)
-                        #         self.wrt(text)
-                        #     case "sleep":
-                        #         secs = float(args[0])
-                        #         self.sleep(secs)
-                        #     case "shoot":
-                        #         self.take_shot()
-                        #     case "repeat":
-                        #         print("Maximum nested repeats is 2.")
+                    case "repeat":
+                        print("Cannot nest repeats")
                     case _:
                         print(f"Invalid command(s)/syntax: {func}")
 
