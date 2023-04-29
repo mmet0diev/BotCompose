@@ -60,7 +60,7 @@ class Bot:
         self.m.hld(btn=btn)
 
     # Drag the mouse to chosen coords
-    def drag(self, x1, y1, x2, y2, dur):
+    def drag(self, x1, y1, x2, y2, dur=2):
         self.m.drag(x1=x1, y1=y1, x2=x2, y2=y2, dur=dur)
 
     # Release a given mouse btn
@@ -181,11 +181,11 @@ class Bot:
     # Manual mode repeat (more of a testing function)
     def repeat_man(self, command: list, reps: int = 2):
         time.sleep(1)
-        parts = command
+        parts = command[1:]
         for i in range(reps):
             index = 0
             while index < len(parts):
-                cmd = parts[index]
+                cmd = command[index]
                 if cmd == "mv":
                     coords = (parts[index + 1], parts[index + 2])
                     x = float(coords[0])
