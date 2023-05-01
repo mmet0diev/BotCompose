@@ -187,7 +187,7 @@ class Bot:
             while index < len(parts):
                 cmd = command[index]
                 if cmd == "mv":
-                    coords = (parts[index + 1], parts[index + 2])
+                    coords = (parts[index], parts[index+1])
                     x = float(coords[0])
                     y = float(coords[1])
                     self.mv(x=x, y=y)
@@ -197,29 +197,29 @@ class Bot:
                     self.clck(btn=btn)
                     index += 2
                 elif cmd == "mvclck":
-                    coords = (parts[index + 1], parts[index + 2])
+                    coords = (parts[index], parts[index + 1])
                     x = float(coords[0])
                     y = float(coords[1])
-                    btn = parts[index + 3]
+                    btn = parts[index + 2]
                     self.mvclck(x=x, y=y, btn=btn)
                     index += 4
                 elif cmd == "scroll":
-                    n = int(parts[index + 1])
+                    n = int(parts[index])
                     self.scroll(n)
                     index += 2
                 elif cmd == "press":
-                    key = parts[index + 1]
+                    key = parts[index]
                     self.press(key)
                     index += 2
                 elif cmd == "hld":
-                    comp = parts[index + 1]
+                    comp = parts[index]
                     if (comp == "mouse"):
-                        key = parts[index + 2]
+                        key = parts[index + 1]
                         self.mouse_hld(key)
                         index += 3
                     elif comp == "kb":
-                        secs = float(parts[index + 1])
-                        self.sleep(secs)
+                        key = parts[index + 1]
+                        self.kb_hld(key)
                         index += 2
                 elif cmd == "drag":
                     if(len(parts) == 4):
@@ -240,19 +240,19 @@ class Bot:
                     else:
                         print("Invalid arguments passed.")
                 elif cmd == "clckimg":
-                    if len(parts) == 2:
-                        img_path = parts[index+1]
+                    if len(parts) == 1:
+                        img_path = parts[index]
                         self.clckimg(img=img_path)
                         index+=2
-                    elif len(parts) == 3:
-                        img_path = parts[index+1]
-                        btn = parts[index+2]
+                    elif len(parts) == 2:
+                        img_path = parts[index]
+                        btn = parts[index+1]
                         self.clckimg(img=img_path, btn=btn)
                         index+=3
-                    elif len(parts) == 4:
-                        img_path = parts[index+1]
-                        btn = parts[index+2]
-                        conf = parts[index+3]
+                    elif len(parts) == 3:
+                        img_path = parts[index]
+                        btn = parts[index+1]
+                        conf = parts[index+2]
                         self.clckimg(img=img_path, btn=btn, conf=conf)
                         index+=4
                     else:
