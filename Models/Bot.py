@@ -193,7 +193,7 @@ class Bot:
                     self.mv(x=x, y=y)
                     index += 3
                 elif cmd == "clck":
-                    btn = parts[index + 1]
+                    btn = parts[index]
                     self.clck(btn=btn)
                     index += 2
                 elif cmd == "mvclck":

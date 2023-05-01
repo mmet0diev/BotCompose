@@ -1,4 +1,78 @@
-
-repeat 5 2
+repeat 2 77
+sleep 22
+mvclck 1054 452 l
 sleep 1
-drag 100 100 500 600 2
+mvclck 693 564 l
+sleep 0.5
+mvclck 1333 837 l
+sleep 1
+sleep 22
+mvclck 1769 298 l
+sleep 2
+clck l
+sleep 2
+mvclck 1264 409 l
+sleep 1.5
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+sleep 9
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+clck r
+sleep 2
+mvclck 1245 420 l
+sleep 2
+mvclck 619 588 l
+sleep 2
+mvclck 191 688 l
+sleep 2
+clck l
+sleep 2
+mvclck 250 780 l
+sleep 2
+clckimg imgs/img1.png l
+sleep 2.5
+mvclck 1333 832 l
