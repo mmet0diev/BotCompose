@@ -103,7 +103,6 @@ def read_from_file(src_file: str):
 
 # Manually issue commands from the terminal(similar to REPL / interactive mode)
 def manual_input(cmd: str):
-    # cmd = ""
     cmds = cmd.strip().split(" ")
     func = cmds[0]
     args = cmds[1:]
@@ -214,7 +213,7 @@ class AppUI():
 
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         input_field = tk.Entry(self.root)
-        man_run_btn = tk.Button(self.root, text="Run", command=manual_input(str(input_field.get())))
+        man_run_btn = tk.Button(self.root, text="Run", command=lambda: manual_input(input_field.get()))
 
         # Pack widgets
         bot_label.grid(row=0, column=0, columnspan=4) # span across all columns
