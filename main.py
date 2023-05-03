@@ -6,32 +6,7 @@ sys.path.append(os.path.join(dir_path, "Models"))
 
 from Models.Bot import Bot
 
-# Initialize a bot model
 bot = Bot()
-
-def intro() -> str:
-    return """
-        ||]]]]]]])        ========      ===================
-        ||       |)     ||        ||            ||
-        ||       |)     ||        ||            ||
-        ||       |      ||        ||            ||
-        ||]]]]]]|       ||        ||            ||
-        ||       |      ||        ||            ||
-        ||       |)     ||        ||            ||
-        ||       |)     ||        ||            ||
-        ||]]]]]]])        ========              ||
-
-           |==========     ========      |\\           /||   ||=======))       ========      ||==========      |========
-          ||             ||        ||    || \\        / ||   ||        ))    ||        ||    ||                |
-         ||              ||        ||    ||  \\      /  ||   ||        ))    ||        ||    ||                |
-        ||               ||        ||    ||    \\   /   ||   ||=======))     ||        ||    ||                |
-        ||               ||        ||    ||      \\/    ||   ||              ||        ||    ||=========||     |========
-        ||               ||        ||    ||            ||   ||              ||        ||               ||     |
-         ||              ||        ||    ||            ||   ||              ||        ||               ||     |
-          ||             ||        ||    ||            ||   ||              ||        ||               ||     |
-           |==========    ========       ||            ||   ||                ========       ==========||     |========
-    """ + "\n"
-
 
 # Read commands from .txt file
 # C:\Users\maxur\Desktop\dsodaily1.txt
@@ -215,89 +190,6 @@ def manual_input(cmd: str):
             print(f"Invalid command/syntax: {func}")
 
 
-# def run():
-#     print(intro())
-#     print('"BotCompose" is a python program designed to "compose bots" or compose commands in order to automate common tasks.')
-#     print(
-#         "\noptions:\n"
-#         "f, file - read commands from a src .txt file\n"
-#         "recmouse - start recording mouse events\n"
-#         "reckb - start recording keyboard events\n"
-#         "playmouse - play the recorded mouse events'\n"
-#         "playkb - play the recorded keyboard events'\n"
-#         "m, man - enter commands manually(similar to running python intractive terminal)\n"
-#         "h, help - Display general info about the tool\n"
-#     )
-#     # main program loop
-#     while True:
-#         top_lvl_cmd = input("> ").lower().strip()
-
-#         if top_lvl_cmd == "f" or top_lvl_cmd == "file":
-#             try:
-#                 src_file = input("Enter src file:\nfile path> ").strip().lower()
-#                 if os.path.isfile(f"{src_file}"):
-#                     read_from_file(src_file)
-#             except Exception:
-#                 print(f'{Exception}')
-#         elif top_lvl_cmd == "recmouse":
-#             print("Recording mouse.\nPress 'esc'(default) to stop.")
-#             bot.rec_mouse()
-#             print("Recording stopped.")
-#         elif top_lvl_cmd == "reckb":
-#             print("Recording keyboard.\nPress 'esc'(default) to stop.")
-#             bot.rec_kb()
-#             print("Recording stopped.")
-#         elif top_lvl_cmd == "playmouse":
-#             print(f"Playing mouse events:\n")
-#             bot.play_mouse()
-#             print("Finished.")
-#         elif top_lvl_cmd == "playkb":
-#             print(f"Playing keyboard events:\n")
-#             bot.play_kb()
-#             print("Finished.")
-#         elif top_lvl_cmd == "m" or top_lvl_cmd == "man":
-#             manual_input()
-#         elif top_lvl_cmd == "h" or top_lvl_cmd == "help":
-#             help()
-#         elif top_lvl_cmd == "q" or top_lvl_cmd == "quit" or top_lvl_cmd == "exit":
-#             print("Exited\n")
-#             exit()
-#         else:
-#             print('.')
-
-
-# The help "menu":
-# def help():
-#     print('\nWelcome to the help menu\n"'
-#           'Bot Compose" is a python program designed to "compose" "bots" and automate various tasks\n'
-#           'Using this tool, the user is able to control the mouse/keyboard in various ways using the\n'
-#             'mouse/keyboard commands available from the bot model.\n'
-#             'The most common functions the Model offers include the mouse functions:\n'
-#         'mv(x, y), clck(btn=l r m), mvclck(x, y, btn),\n as well as keyboard functions:\n'
-#         'press(btn), hld(btn), rel(btn), wrt(text), and other useful functions like sleep(time), record actions,\n'
-#         'There are various ways these functions can be composed together to create a sequence of actions to be automated.'
-#         'reading commands from a file example:\n'
-#         'sleep 5\nmv 200 120\nsleep 1\nclck l\nclck l\nmvclck 340 215 l\nwrt Hello World!\npress tab\n my name is Jack.\n'
-#         'The bot also has functions such as rec() for mouse/keyboard events recording, play() for playing recorded events,\n'
-#         'repeat() for repeating a sequence of events/actions which can be utilized throught read_from_file or manual_input\n'
-#         'more on them later.'
-#     )
-#     print(
-#         "options:"
-#         "f, file - read commands from a src .txt file\n"
-#         "recmouse - start recording mouse events\n"
-#         "reckb - start recording keyboard events\n"
-#         "playmouse - replay recorded mouse events\n"
-#         "playkb - replay recorded keyboard events\n"
-#         "m, man - enter commands manually(similar to running python intractive terminal)\n"
-#         "h, help - Display general info about the tool\n"
-#     )
-#     print(
-#         "This tool can be used in numerous ways and the effective usage of it is dependent on the user's imagination.")
-#     print(
-#         "The the core concept of this botcomposition/automation program is for it to execute 'commands' set by the user.\n"
-#     )
-
 import tkinter as tk
 
 class AppUI():
@@ -322,7 +214,7 @@ class AppUI():
 
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         input_field = tk.Entry(self.root)
-        man_run_btn = tk.Button(self.root, text="Run")
+        man_run_btn = tk.Button(self.root, text="Run", command=manual_input(str(input_field.get())))
 
         # Pack widgets
         bot_label.grid(row=0, column=0, columnspan=4) # span across all columns
