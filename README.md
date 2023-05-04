@@ -7,7 +7,7 @@ To run the app, 1st you will need to have a python version(either +2 or +3) inst
 mouse, keyboard, pyautogui.
 Running the program is as follows:
 Either: 
-- through simply using the run.bat file on Windows or the run.sh for Linux/Mac(root access is going to be required for the mouse/keyboard modules).
+- through simply using the main.py file in the project directory or run.bat file on Windows or the run.sh for Linux/Mac(root access is going to be required for the mouse/keyboard modules).
 - through command line / terminal, navigate to the cloned project directory(BotCompose) and type either py/python/python3.. main.py
 - through an ide. Simply run the program through a python supporting ide or text editor such as PyChar, VSCode or any other ide with python support.
 
