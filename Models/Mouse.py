@@ -61,13 +61,13 @@ class Mouse:
 
     # Scroll the scroller z units + for up - for down
     def scroll(self, z: int):
-        time.sleep(0.1)
+        time.sleep(0.2)
         m.wheel(z)
 
     # Hold a given mouse btn
     def hld(self, btn: str):
-        time.sleep(0.1)
-        m.press(btn)
+        time.sleep(0.2)
+        m.press(button=btn)
 
     # Release a given mouse btn
     def rel(self, btn: str):
