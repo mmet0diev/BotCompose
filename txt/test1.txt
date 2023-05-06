@@ -1,9 +1,9 @@
-
-sleep 1
+sleep 2
 mv 1 1
 sleep 1
-mv 200 300
+mv 200 200
 sleep 1
-clckimg imgs/test0.png l
+mv 400 500
 sleep 1
-mv 500 500
+mv 1000 1200
+sleep 2

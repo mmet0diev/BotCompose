@@ -9,13 +9,12 @@ from Models.Bot import Bot
 bot = Bot()
 
 # Read commands from .txt file
-# C:\Users\maxur\Desktop\dsodaily1.txt
 def read_from_file(src_file: str):
     # "Press 'esc' to stop command(s) execution.
     if src_file != "":
-        with open(src_file, "r") as f:
-            for line in f:
-                try:
+        try:
+            with open(src_file, "r") as f:
+                for line in f:
                     if bot.kb.check_key_pressed("esc"):
                         print("Execution stopped.")
                         break
@@ -99,9 +98,9 @@ def read_from_file(src_file: str):
                                 print(f"Invalid command(s)/syntax: {func}")
                     else:
                         print("Empty line")
-                except Exception:
-                    print("Invalid command(s)/syntax.")
-        f.close()
+            f.close()
+        except Exception:
+            print("Invalid command(s)/syntax or file/path.")
     else:
         print("Empty input field!")
 
@@ -194,7 +193,7 @@ def manual_input(cmd: str):
             case _:
                 print(f"Invalid command/syntax: {func}")
     except Exception:
-        print("Invalid command(s)/syntax")
+        print("Invalid command(s)/syntax or file")
 
 
 import tkinter as tk
