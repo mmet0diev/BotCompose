@@ -11,7 +11,7 @@ bot = Bot()
 # Read commands from .txt file
 def read_from_file(src_file: str):
     # "Press 'esc' to stop command(s) execution.
-    if src_file != "":
+    if src_file != "" and os.path.exists(src_file):
         try:
             with open(src_file, "r") as f:
                 for line in f:
@@ -100,9 +100,9 @@ def read_from_file(src_file: str):
                         print("Empty line")
                 f.close()
         except Exception:
-            print("Invalid command(s)/syntax or file/path.")
+            print(Exception)
     else:
-        print("Empty input field!")
+        print("F.")
 
 
 # Manually issue commands from the terminal(similar to REPL / interactive mode)
