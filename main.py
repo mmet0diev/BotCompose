@@ -98,7 +98,7 @@ def read_from_file(src_file: str):
                                 print(f"Invalid command(s)/syntax: {func}")
                     else:
                         print("Empty line")
-            f.close()
+                f.close()
         except Exception:
             print("Invalid command(s)/syntax or file/path.")
     else:
