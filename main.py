@@ -8,7 +8,6 @@ sys.path.append(os.path.join(dir_path, "Models"))
 
 bot = Bot()
 
-
 def read_from_file(src_path: str):
     # "Press 'esc' to stop command(s) execution.
     try:
