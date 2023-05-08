@@ -1,10 +1,10 @@
 import tkinter as tk
-from Models.Bot import Bot
 import os
 import sys
 # Add the path to the Models directory to the system path
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
+from Models.Bot import Bot
 
 bot = Bot()
 
