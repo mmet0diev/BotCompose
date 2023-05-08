@@ -6,16 +6,13 @@ import sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 
-
 bot = Bot()
 
-# Read commands from .txt file
 
-
-def read_from_file(src_file: str):
+def read_from_file(src_path: str):
     # "Press 'esc' to stop command(s) execution.
     try:
-        with open(src_file, "r") as f:
+        with open(src_path, "r") as f:
             for line in f:
                 if bot.kb.check_key_pressed("esc"):
                     print("Execution stopped.")
@@ -103,7 +100,7 @@ def read_from_file(src_file: str):
                     print("Empty line")
             f.close()
     except FileNotFoundError:
-        print(f"File not found: {src_file}")
+        print(f"File not found: {src_path}")
     except Exception as e:
         print(f"Error: {e}")
 
