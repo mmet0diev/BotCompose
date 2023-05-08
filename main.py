@@ -1,4 +1,3 @@
-import tkinter as tk
 import os
 import sys
 # Add the path to the Models directory to the system path
@@ -194,6 +193,8 @@ def manual_input(cmd: str):
     except Exception:
         print("Invalid command(s)/syntax or file")
 
+
+import tkinter as tk
 
 class AppUI():
     def __init__(self, bot=Bot()) -> None:
