@@ -197,7 +197,7 @@ def manual_input(cmd: str):
 import tkinter as tk
 
 class AppUI():
-    def __init__(self, bot=Bot()) -> None:
+    def __init__(self) -> None:
         self.bot = bot
         self.root = tk.Tk()
         self.root.title("Bot Controller")
@@ -252,7 +252,7 @@ class AppUI():
 
 
 def run():
-    app = AppUI(bot=bot)
+    app = AppUI()
 
 
 if __name__ == "__main__":
