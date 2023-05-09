@@ -100,7 +100,7 @@ def read_from_file(src_path: str):
     except FileNotFoundError:
         print(f"File not found: {src_path}")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Invalid command(s)/syntax or file:\n{e}")
 
 
 # Manually issue commands from the terminal(similar to REPL / interactive mode)
