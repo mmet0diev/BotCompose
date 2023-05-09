@@ -19,7 +19,6 @@ class Mouse:
 
     # Mouse controls:
     # More of a testing func
-
     def getPos(self):
         return m.get_position()
 
