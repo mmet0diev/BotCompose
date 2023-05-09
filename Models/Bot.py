@@ -35,7 +35,7 @@ class Bot:
     # Mouse controls:
     # More of a testing function
     def getPos(self):
-        return self.m.getPos()
+        self.m.getPos()
 
     # Move the mouse to xy
     def mv(self, x: int, y: int, dur=0):

@@ -247,6 +247,7 @@ class AppUI():
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(4, weight=1)
         bot_label.grid_configure(sticky="nsew")
+        
 
         self.root.mainloop()
 

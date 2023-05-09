@@ -15,14 +15,16 @@ class Mouse:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
-        self.pos = m.get_position()
 
     # Mouse controls:
-    # More of a testing func
+    # Get mouse position
     def getPos(self):
-        return m.get_position()
+        self.pos = m.get_position()
+        new_x, new_y = m.get_position()
+        self.pos = (new_x, new_y)
+        return f"Mouse coordinates: {new_x}, {new_y}"
 
-    # Move the mouse to xy
+    # Move the mouse to xy  
     def mv(self, x: int, y: int, dur=0):
         # print("mv called")
         time.sleep(0.1)
