@@ -72,25 +72,6 @@ class Keyboard:
             return True
         return False
 
-    # Add a hotkey
-    def add_hk(self, hk: str="h+k", callback=None, args=()):
-        if callback is None:
-            callback = lambda: print(self.__str__())
-        try:
-            kb.add_hotkey(hk, callback, args)
-            self.hotkeys.append(hk)
-            print(f"Added hotkey {hk}")
-        except ValueError:
-            print(f"Hotkey {hk} already added")
-
-    # Remove a hotkey
-    def rm_hk(self, hk: str):
-        try:
-            kb.remove_hotkey(hk)
-            self.hotkeys.remove(hk)
-            print(f"Removed hotkey {hk}")
-        except Exception:
-            print(f"hotkey combo {hk} not added")
 
     # toString of KB
     def __str__(self) -> str:

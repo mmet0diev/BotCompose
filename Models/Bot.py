@@ -31,7 +31,6 @@ class Bot:
             self.imgs_num = self.get_imgs_num()
         else:
             self.imgs_num = imgs_num
-        kb.add_hk()
 
     # Mouse controls:
     # More of a testing function
@@ -286,13 +285,6 @@ class Bot:
         pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
         self.imgs_num += 1
 
-    # Adds hotkey combination (h+k initially)
-    def addhk(self, hk="h+k", callback=None, args=()):
-        self.kb.add_hk(hk)
-
-    # Removes a hotkey combination(if present in hotkeys list in Keyboard)
-    def rmhk(self, hk=""):
-        self.kb.rm_hk(hk)
 
     # toString for Model (Bot)
     def __str__(self) -> str:
