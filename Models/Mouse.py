@@ -90,7 +90,7 @@ class Mouse:
             img_center: tuple = None
             if(img is not None):
                 img_center = pag.center(img_location)
-                print(img_center)
+                # print(img_center)
             else:
                 print("Image not found.")
         except Exception:
