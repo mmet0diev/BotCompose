@@ -15,6 +15,7 @@ class Mouse:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
+        self.pos = m.get_position()
 
     # Mouse controls:
     # Get mouse position
@@ -105,8 +106,8 @@ class Mouse:
                 f.close()
 
     # Clear the current output.txt contents
-    def clear_file(self, file_path):
-        open(file_path, 'w').close()
+    def clear_file(self):
+        open(self.output_file, 'w').close()
 
     # Stop recording the mouse events
     def stop_recording(self):
@@ -116,8 +117,8 @@ class Mouse:
     # Record the mouse events
     def record(self):
         self.events = []
-        self.clear_file(self.output_file)
-        self.pos = self.getPos()
+        self.clear_file()
+        self.pos = self.pos
         m.hook(self.events.append)
         self.stop_recording()
         self.write_to_file()
@@ -127,7 +128,6 @@ class Mouse:
         time.sleep(1)
         m.move(x=self.pos[0], y=self.pos[1])
         m.play(self.events, speed_factor=1)
-        # self.clear_file(self.output_file)
     
 
     # toString of Mouse

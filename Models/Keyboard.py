@@ -37,9 +37,9 @@ class Keyboard:
         kb.write(text, delay=d)
 
     # Clear the KB file contents
-    def clear_file(self, file_path: str):
-        if os.path.isfile(file_path):
-            open(file_path, 'w').close()
+    def clear_file(self):
+        if os.path.isfile(self.output_file):
+            open(self.output_file, 'w').close()
 
     # Write to the output file
     def write_to_file(self):
@@ -56,7 +56,7 @@ class Keyboard:
     # Record the keyboard events
     def record(self):
         self.events = []
-        self.clear_file(self.output_file)
+        self.clear_file()
         kb.hook(self.events.append)
         self.stop_recording()
         self.write_to_file()
