@@ -118,7 +118,7 @@ class Mouse:
     def record(self):
         self.events = []
         self.clear_file()
-        self.pos = self.pos
+        self.pos = m.get_position()
         m.hook(self.events.append)
         self.stop_recording()
         self.write_to_file()
