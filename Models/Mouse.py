@@ -88,12 +88,13 @@ class Mouse:
             img_center: tuple = None
             if(img is not None):
                 img_center = pag.center(img_location)
-                # print(img_center)
+                print(img_center)
             else:
                 print("Image not found.")
+                return
+            self.mvclck(img_center[0], img_center[1], btn=btn)
         except Exception:
-            print("Image not found.")
-        self.mvclck(img_center[0], img_center[1], btn=btn)
+            print("Image/path not found.")
 
     # Write to mouse events output.txt file
     def write_to_file(self):
