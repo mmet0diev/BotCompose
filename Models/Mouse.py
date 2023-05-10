@@ -21,9 +21,7 @@ class Mouse:
     # Get mouse position
     def getPos(self):
         self.pos = m.get_position()
-        new_x, new_y = m.get_position()
-        self.pos = (new_x, new_y)
-        return f"Mouse coordinates: {new_x}, {new_y}"
+        return f"Coords: {self.pos[0], {self.pos[1]}}"
 
     # Move the mouse to xy  
     def mv(self, x: int, y: int, dur=0):

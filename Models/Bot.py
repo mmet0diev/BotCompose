@@ -7,7 +7,10 @@ import pyautogui as pag
 
 class Bot:
     # imgs folder path
-    imgs_path = os.path.join(os.getcwd(), "imgs")
+    try:
+        imgs_path = os.path.join(os.getcwd(), "imgs")
+    except Exception as e:
+        print("Folder/Directory not found.")
 
     # get initial number of image files in imgs folder
     def get_imgs_num(self) -> int:

@@ -190,8 +190,8 @@ def manual_input(cmd: str):
                 print(bot.getPos())
             case _:
                 print(f"Invalid command/syntax: {func}")
-    except Exception:
-        print("Invalid command(s)/syntax or file")
+    except Exception as e:
+        print(e)
 
 
 import tkinter as tk
