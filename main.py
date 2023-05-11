@@ -233,8 +233,8 @@ class AppUI():
         # span across all columns
         bot_label.grid(row=0, column=0, columnspan=4)
         mouse_rec_btn.grid(row=1, column=0)
-        kb_rec_btn.grid(row=1, column=1)
-        mouse_play_btn.grid(row=1, column=2)
+        mouse_play_btn.grid(row=1, column=1)
+        kb_rec_btn.grid(row=1, column=2)
         kb_play_btn.grid(row=1, column=3)
         file_read_label.grid(row=2, column=0)
         file_input_field.grid(row=2, column=1)
