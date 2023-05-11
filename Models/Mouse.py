@@ -21,7 +21,7 @@ class Mouse:
     # Get mouse position
     def getPos(self):
         self.pos = m.get_position()
-        return f"Coords: {self.pos[0], {self.pos[1]}}"
+        return f"Coords: {self.pos[0]}, {self.pos[1]}"
 
     # Move the mouse to xy  
     def mv(self, x: int, y: int, dur=0):
@@ -115,6 +115,7 @@ class Mouse:
 
     # Record the mouse events
     def record(self):
+        m.unhook_all()
         self.events = []
         self.clear_file()
         self.pos = m.get_position()
