@@ -5,6 +5,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 from Models.Bot import Bot
 
+
 bot = Bot()
 
 def read_from_file(src_path: str):
@@ -247,7 +248,7 @@ class AppUI():
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(4, weight=1)
         bot_label.grid_configure(sticky="nsew")
-        
+
 
         self.root.mainloop()
 
