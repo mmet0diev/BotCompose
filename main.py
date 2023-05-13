@@ -187,8 +187,6 @@ def manual_input(cmd: str):
                     bot.repeat_man(command=cmds[2:], reps=reps)
                 else:
                     print("Invalid number of args.")
-            case "pos":
-                print(bot.getPos())
             case _:
                 print(f"Invalid command/syntax: {func}")
     except Exception as e:

@@ -21,7 +21,11 @@ class Mouse:
     # Get mouse position
     def getPos(self):
         self.pos = m.get_position()
-        return f"Coords: {self.pos[0]}, {self.pos[1]}"
+        while True:
+            new_x, new_y = m.get_position()[0], m.get_position()[1]
+            if self.pos[0] != new_x and self.pos[1] != new_y:
+                print(f"Coords: {new_x}, {new_y}")
+                time.sleep(0.1)
 
     # Move the mouse to xy  
     def mv(self, x: int, y: int, dur=0):
