@@ -45,6 +45,9 @@ class Bot:
         # print("mv called")
         self.m.mv(x=x, y=y, dur=dur)
 
+    def is_mouse_moved(self):
+        self.m.mouse_moved()
+
     # Click a left, right, middle(scroll) mouse btn
     def clck(self, btn: str):
         self.m.clck(btn=btn)

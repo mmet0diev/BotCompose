@@ -199,7 +199,6 @@ import tkinter as tk
 
 class AppUI():
     def __init__(self) -> None:
-        self.bot = bot
         self.root = tk.Tk()
         self.root.title("Bot Controller")
         self.root.geometry("600x350")
@@ -211,13 +210,13 @@ class AppUI():
         bot_label = tk.Label(self.root, text="BOTCOMPOSE",
                              font=("Helvetica", 20), pady=5)
         mouse_rec_btn = tk.Button(
-            self.root, text="rec mouse", pady=5, command=self.bot.rec_mouse)
+            self.root, text="rec mouse", pady=5, command=bot.rec_mouse)
         kb_rec_btn = tk.Button(self.root, text="rec kb",
-                               pady=5, command=self.bot.rec_kb)
+                               pady=5, command=bot.rec_kb)
         mouse_play_btn = tk.Button(
-            self.root, text="play mouse", pady=5, command=self.bot.play_mouse)
+            self.root, text="play mouse", pady=5, command=bot.play_mouse)
         kb_play_btn = tk.Button(self.root, text="play kb",
-                                pady=5, command=self.bot.play_kb)
+                                pady=5, command=bot.play_kb)
 
         file_read_label = tk.Label(self.root, text="Read from file ->")
         file_input_field = tk.Entry(self.root)
@@ -248,7 +247,6 @@ class AppUI():
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(4, weight=1)
         bot_label.grid_configure(sticky="nsew")
-
 
         self.root.mainloop()
 

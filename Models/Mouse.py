@@ -129,6 +129,12 @@ class Mouse:
         m.move(x=self.pos[0], y=self.pos[1])
         m.play(self.events, speed_factor=1)
     
+    def mouse_moved(self) -> bool:
+        new_pos = m.get_position()
+        if new_pos != self.pos:
+            self.pos = new_pos
+            return True
+        return False
 
     # toString of Mouse
     def __str__(self) -> str:
