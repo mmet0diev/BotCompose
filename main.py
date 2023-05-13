@@ -224,7 +224,6 @@ class AppUI():
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         man_input_field = tk.Entry(self.root)
         man_run_btn = tk.Button(self.root, text="Run", command=lambda: manual_input(man_input_field.get()))
-        mouse_pos_label = tk.Label(self.root, text="Mouse Coords: ")
 
         # Pack widgets
         # span across all columns
@@ -239,7 +238,6 @@ class AppUI():
         manual_label.grid(row=3, column=0)
         man_input_field.grid(row=3, column=1)
         man_run_btn.grid(row=3, column=2)
-        mouse_pos_label.grid(row=4, column=0)
 
         # Center the bot_label widget
         self.root.grid_columnconfigure(0, weight=1)
