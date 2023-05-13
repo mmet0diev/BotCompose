@@ -21,7 +21,7 @@ class Mouse:
     # Get mouse position
     def getPos(self):
         self.pos = m.get_position()
-        return self.pos
+        return f"Mouse coordinates: {self.pos}"
         # while True:
         #     new_x, new_y = m.get_position()[0], m.get_position()[1]
         #     if self.pos[0] != new_x and self.pos[1] != new_y:
@@ -133,13 +133,6 @@ class Mouse:
         time.sleep(1)
         m.move(x=self.pos[0], y=self.pos[1])
         m.play(self.events, speed_factor=1)
-    
-    def mouse_moved(self) -> bool:
-        new_pos = m.get_position()
-        if new_pos != self.pos:
-            self.pos = new_pos
-            return True
-        return False
 
     # toString of Mouse
     def __str__(self) -> str:

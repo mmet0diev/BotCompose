@@ -91,8 +91,7 @@ def read_from_file(src_path: str):
                         case "repeat":
                             reps = int(args[0])
                             next_lines = int(args[1])
-                            bot.repeat_lines(
-                                f=f, reps=reps, n_lines=next_lines)
+                            bot.repeat_lines(f=f, reps=reps, n_lines=next_lines)
                         case _:
                             print(f"Invalid command(s)/syntax: {func}")
                 else:
@@ -225,7 +224,7 @@ class AppUI():
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         man_input_field = tk.Entry(self.root)
         man_run_btn = tk.Button(self.root, text="Run", command=lambda: manual_input(man_input_field.get()))
-
+        mouse_pos_label = tk.Label(self.root, text="Mouse Coords: ")
 
         # Pack widgets
         # span across all columns
@@ -240,11 +239,13 @@ class AppUI():
         manual_label.grid(row=3, column=0)
         man_input_field.grid(row=3, column=1)
         man_run_btn.grid(row=3, column=2)
+        mouse_pos_label.grid(row=4, column=0)
 
         # Center the bot_label widget
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(4, weight=1)
         bot_label.grid_configure(sticky="nsew")
+
 
         self.root.mainloop()
 
