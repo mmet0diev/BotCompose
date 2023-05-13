@@ -3,7 +3,7 @@ A python program, allowing the user to compose different functions/commands toge
 as well as some other 3rd-party modules such as pyautogui and inbuilt python modules(os, sys, time).
 
 # Usage
-To run the app, 1st you will need to have a python version(either +2 or +3) installed, as well as the following libraries/modules:
+To run the program, 1st you will need to have a python version(either +2 or +3) installed, as well as the following libraries/modules:
 mouse, keyboard, pyautogui.
 Running the program is as follows:
 Either: 
