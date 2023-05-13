@@ -224,8 +224,8 @@ class AppUI():
 
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         man_input_field = tk.Entry(self.root)
-        man_run_btn = tk.Button(
-            self.root, text="Run", command=lambda: manual_input(man_input_field.get()))
+        man_run_btn = tk.Button(self.root, text="Run", command=lambda: manual_input(man_input_field.get()))
+
 
         # Pack widgets
         # span across all columns
