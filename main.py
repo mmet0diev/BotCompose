@@ -87,7 +87,11 @@ def read_from_file(src_path: str):
                             secs = float(args[0])
                             bot.sleep(secs)
                         case "shoot":
-                            bot.take_shot()
+                            if len(args) == 0:
+                                bot.take_shot()
+                            elif len(args) == 1:
+                                d = float(args[0])
+                                bot.take_shot(delay=d)
                         case "repeat":
                             reps = int(args[0])
                             next_lines = int(args[1])

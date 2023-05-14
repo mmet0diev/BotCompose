@@ -285,7 +285,8 @@ class Bot:
         self.kb.play()
 
     # Takes a screenshot and saves it to imgs folder
-    def take_shot(self):
+    def take_shot(self, delay=0.5):
+        time.sleep(delay)
         pag.screenshot(f"{self.imgs_path}\\screenshot{self.imgs_num}.png")
         self.imgs_num += 1
 
