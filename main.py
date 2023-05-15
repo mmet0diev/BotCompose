@@ -277,6 +277,9 @@ class AppUI():
                     bot.play_mouse()
             except ValueError:
                 print("Invalid input. Please enter a valid integer.")
+        else:
+            bot.play_mouse()
+
 
     def replay_kb_btn_clicked(self, entry):
         value = entry.get()
@@ -287,6 +290,8 @@ class AppUI():
                     bot.play_kb()
             except ValueError:
                 print("Invalid input. Please enter a valid integer.")
+        else:
+            bot.play_kb()
 
 def run():
     app = AppUI()
