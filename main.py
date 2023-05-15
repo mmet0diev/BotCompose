@@ -92,6 +92,11 @@ def read_from_file(src_path: str):
                             elif len(args) == 1:
                                 d = float(args[0])
                                 bot.take_shot(delay=d)
+                        case "play":
+                            if args[0] == "mouse":
+                               bot.play_mouse()
+                            elif args[0] == "kb":
+                                bot.play_kb()
                         case "repeat":
                             reps = int(args[0])
                             next_lines = int(args[1])
