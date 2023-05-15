@@ -184,6 +184,11 @@ def manual_input(cmd: str):
                     bot.sleep(secs=secs)
             case "shoot":
                 bot.take_shot()
+            case "play":
+                if args[0] == "mouse":
+                    bot.play_mouse()
+                elif args[0] == "kb":
+                    bot.play_kb()
             case "repeat":
                 if len(args) > 0:
                     reps = int(args[0])
@@ -195,35 +200,40 @@ def manual_input(cmd: str):
     except Exception as e:
         print(e)
 
+def replay_mouse(reps = 1):
+    for i in range(reps):
+        bot.play_mouse()
+
+def replay_kb(reps = 1):
+    for i in range(reps):
+        bot.play_kb()
 
 import tkinter as tk
 
 class AppUI():
+    
     def __init__(self) -> None:
         self.root = tk.Tk()
         self.root.title("Bot Controller")
         self.root.geometry("600x350")
         self.root.resizable(False, False)
-        self.root.columnconfigure([0, 1, 2, 3], pad=20)
-        self.root.rowconfigure([0, 1, 2, 3], pad=20)
+        self.root.columnconfigure([0, 1, 2, 3, 4], pad=20)
+        self.root.rowconfigure([0, 1, 2, 3, 4], pad=20)
 
         # Define widgets
-        bot_label = tk.Label(self.root, text="BOTCOMPOSE",
-                             font=("Helvetica", 20), pady=5)
-        mouse_rec_btn = tk.Button(
-            self.root, text="rec mouse", pady=5, command=bot.rec_mouse)
-        kb_rec_btn = tk.Button(self.root, text="rec kb",
-                               pady=5, command=bot.rec_kb)
-        mouse_play_btn = tk.Button(
-            self.root, text="play mouse", pady=5, command=bot.play_mouse)
-        kb_play_btn = tk.Button(self.root, text="play kb",
-                                pady=5, command=bot.play_kb)
+        bot_label = tk.Label(self.root, text="BOTCOMPOSE", font=("Helvetica", 20), pady=5)
+        mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=bot.rec_mouse)
+        kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=bot.rec_kb)
+        mouse_play_entry = tk.Entry(self.root, name="1")
+        mouse_play_btn = tk.Button(self.root, text="play mouse", pady=5, command=lambda: self.replay_mouse_btn_clicked(mouse_play_entry))
+        kb_play_entry = tk.Entry(self.root)
+        kb_play_btn = tk.Button(self.root, text="play kb", pady=5, command=lambda: self.replay_kb_btn_clicked(kb_play_entry))
+
 
         file_read_label = tk.Label(self.root, text="Read from file ->")
         file_input_field = tk.Entry(self.root)
         file_read_btn = tk.Button(self.root, text="Run", pady=5)
-        file_read_btn.configure(
-            command=lambda: read_from_file(file_input_field.get()))
+        file_read_btn.configure(command=lambda: read_from_file(file_input_field.get()))
 
         manual_label = tk.Label(self.root, text="Run commands manually ->")
         man_input_field = tk.Entry(self.root)
@@ -233,24 +243,45 @@ class AppUI():
         # span across all columns
         bot_label.grid(row=0, column=0, columnspan=4)
         mouse_rec_btn.grid(row=1, column=0)
-        mouse_play_btn.grid(row=1, column=1)
-        kb_rec_btn.grid(row=1, column=2)
-        kb_play_btn.grid(row=1, column=3)
-        file_read_label.grid(row=2, column=0)
-        file_input_field.grid(row=2, column=1)
-        file_read_btn.grid(row=2, column=2)
-        manual_label.grid(row=3, column=0)
-        man_input_field.grid(row=3, column=1)
-        man_run_btn.grid(row=3, column=2)
+        mouse_play_entry.grid(row=1, column=1)
+        mouse_play_btn.grid(row=1, column=2)
+        kb_rec_btn.grid(row=2, column=0)
+        kb_play_entry.grid(row=2, column=1)
+        kb_play_btn.grid(row=2, column=2)
+        file_read_label.grid(row=3, column=0)
+        file_input_field.grid(row=3, column=1)
+        file_read_btn.grid(row=3, column=2)
+        manual_label.grid(row=4, column=0)
+        man_input_field.grid(row=4, column=1)
+        man_run_btn.grid(row=4, column=2)
 
         # Center the bot_label widget
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_columnconfigure(4, weight=1)
         bot_label.grid_configure(sticky="nsew")
 
-
         self.root.mainloop()
 
+
+    def replay_mouse_btn_clicked(self, entry):
+        value = entry.get()
+        if value:
+            try:
+                reps = int(value)
+                for _ in range(reps):
+                    bot.play_mouse()
+            except ValueError:
+                print("Invalid input. Please enter a valid integer.")
+
+    def replay_kb_btn_clicked(self, entry):
+        value = entry.get()
+        if value:
+            try:
+                reps = int(value)
+                for _ in range(reps):
+                    bot.play_kb()
+            except ValueError:
+                print("Invalid input. Please enter a valid integer.")
 
 def run():
     app = AppUI()
