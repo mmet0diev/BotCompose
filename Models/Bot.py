@@ -176,6 +176,11 @@ class Bot:
                             self.clckimg(img_path, btn=btn, conf=conf)
                     case "shoot":
                         self.take_shot()
+                    case "play":
+                        if args[0] == "mouse":
+                            self.play_mouse()
+                        elif args[0] == "kb":
+                            self.play_kb()
                     case "repeat":
                         print("Cannot nest repeats")
                     case _:
@@ -260,6 +265,12 @@ class Bot:
                         index+=4
                     else:
                         print("Invalid number of args.")
+                elif cmd == "play":
+                    comp = parts[index]
+                    if comp == "mouse":
+                        self.play_mouse()
+                    elif comp == "kb":
+                        self.play_kb()
                 elif cmd == "repeat":
                     print("Cannot nest repeats in man mode.")
                 else:
