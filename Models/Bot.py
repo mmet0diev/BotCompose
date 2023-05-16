@@ -271,6 +271,7 @@ class Bot:
                         self.play_mouse()
                     elif comp == "kb":
                         self.play_kb()
+                    index+=2
                 elif cmd == "repeat":
                     print("Cannot nest repeats in man mode.")
                 else:
