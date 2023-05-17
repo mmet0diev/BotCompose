@@ -188,7 +188,11 @@ def manual_input(cmd: str):
                     secs = args[0]
                     bot.sleep(secs=secs)
             case "shoot":
-                bot.take_shot()
+                if len(args) == 0:
+                    bot.take_shot()
+                elif len(args) == 1:
+                    d = float(args[0])
+                    bot.take_shot(delay=d)
             case "play":
                 if args[0] == "mouse":
                     bot.play_mouse()
