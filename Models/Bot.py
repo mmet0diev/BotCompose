@@ -127,18 +127,22 @@ class Bot:
                         comp = args[0]
                         if comp == "mouse":
                             key = args[0]
-                            self.mouse_hld(key)
+                            btn = args[1]
+                            self.mouse_hld(btn=btn)
                         if comp == "kb":
                             key = args[0]
-                            self.kb_hld(key)
+                            btn = args[1]
+                            self.kb_hld(btn=btn)
                     case "rel":
                         comp = args[0]
+                        btn = args[1]
                         if comp == "mouse":
                             key = args[0]
-                            self.mouse_rel(key)
+                            self.mouse_rel(btn=btn)
                         if comp == "kb":
                             key = args[0]
-                            self.kb.rel(key)
+                            btn = args[1]
+                            self.kb.rel(btn=btn)
                     case "wrt":
                         text = " ".join(args)
                         self.wrt(text)
