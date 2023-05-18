@@ -4,12 +4,12 @@ import sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 from Models.Bot import Bot
-import ctypes
+from screeninfo import get_monitors
 
 def get_screen_resolution():
-    user32 = ctypes.windll.user32
-    width = user32.GetSystemMetrics(0)
-    height = user32.GetSystemMetrics(1)
+    monitor = get_monitors()[0]  # Assuming the first monitor
+    width = monitor.width
+    height = monitor.height
     return f"x={width} y={height}"
 
 bot = Bot()
