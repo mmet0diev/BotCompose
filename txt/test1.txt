@@ -1,2 +1,12 @@
-repeat 3 1
-play kb
+
+mv 1 1
+sleep 1
+mv 100 100
+sleep 1
+mv 200 200
+sleep 1
+mv 300 300
+sleep 1
+mv 500 500
+sleep 1
+mv 700 50

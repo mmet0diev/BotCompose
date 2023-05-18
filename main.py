@@ -4,7 +4,13 @@ import sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 from Models.Bot import Bot
+import ctypes
 
+def get_screen_resolution():
+    user32 = ctypes.windll.user32
+    width = user32.GetSystemMetrics(0)
+    height = user32.GetSystemMetrics(1)
+    return f"x={width} y={height}"
 
 bot = Bot()
 
@@ -231,6 +237,7 @@ class AppUI():
 
         # Define widgets
         bot_label = tk.Label(self.root, text="BOTCOMPOSE", font=("Helvetica", 20), pady=5)
+        screen_res_label = tk.Label(self.root, text=f"Screen Resolution: {get_screen_resolution()}", font=("Helvetica", 12))
         mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=bot.rec_mouse)
         kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=bot.rec_kb)
         mouse_play_entry = tk.Entry(self.root, name="1")
@@ -251,18 +258,19 @@ class AppUI():
         # Pack widgets
         # span across all columns
         bot_label.grid(row=0, column=0, columnspan=4)
-        mouse_rec_btn.grid(row=1, column=0)
-        mouse_play_entry.grid(row=1, column=1)
-        mouse_play_btn.grid(row=1, column=2)
-        kb_rec_btn.grid(row=2, column=0)
-        kb_play_entry.grid(row=2, column=1)
-        kb_play_btn.grid(row=2, column=2)
-        file_read_label.grid(row=3, column=0)
-        file_input_field.grid(row=3, column=1)
-        file_read_btn.grid(row=3, column=2)
-        manual_label.grid(row=4, column=0)
-        man_input_field.grid(row=4, column=1)
-        man_run_btn.grid(row=4, column=2)
+        screen_res_label.grid(row=1, column=0, columnspan=4)
+        mouse_rec_btn.grid(row=2, column=0)
+        mouse_play_entry.grid(row=2, column=1)
+        mouse_play_btn.grid(row=2, column=2)
+        kb_rec_btn.grid(row=3, column=0)
+        kb_play_entry.grid(row=3, column=1)
+        kb_play_btn.grid(row=3, column=2)
+        file_read_label.grid(row=4, column=0)
+        file_input_field.grid(row=4, column=1)
+        file_read_btn.grid(row=4, column=2)
+        manual_label.grid(row=5, column=0)
+        man_input_field.grid(row=5, column=1)
+        man_run_btn.grid(row=5, column=2)
 
         # Center the bot_label widget
         self.root.grid_columnconfigure(0, weight=1)
