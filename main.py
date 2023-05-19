@@ -7,10 +7,11 @@ import threading
 from Models.Bot import Bot
 from screeninfo import get_monitors
 
+monitor = get_monitors()[0]  # Assuming the first monitor
+width = monitor.width
+height = monitor.height
+
 def get_screen_resolution():
-    monitor = get_monitors()[0]  # Assuming the first monitor
-    width = monitor.width
-    height = monitor.height
     return f"x={width} y={height}"
 
 bot = Bot()
@@ -236,7 +237,10 @@ class AppUI():
     def __init__(self) -> None:
         self.root = tk.Tk()
         self.root.title("Bot Controller")
-        self.root.geometry("600x350")
+        if width == 1366 and height == 768:
+            self.root.geometry("600x350")
+        elif width == 1920 and height == 1080:
+            self.root.geometry("900x500")
         self.root.resizable(False, False)
         self.root.columnconfigure([0, 1, 2, 3, 4], pad=20)
         self.root.rowconfigure([0, 1, 2, 3, 4], pad=20)
