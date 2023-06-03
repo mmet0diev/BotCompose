@@ -9,9 +9,9 @@ class Mouse:
 
     # The Mouse constructor
     def __init__(self,
-                 comp_name="Mouse",
-                 events=[],
-                 output_file="txt/mouse_events.txt") -> None:
+            comp_name="Mouse",
+            events=[],
+            output_file="txt/mouse_events.txt") -> None:
         self.comp_name = comp_name
         self.events = events
         self.output_file = output_file
