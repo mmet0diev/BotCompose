@@ -7,11 +7,11 @@ To run the program, 1st you will need to have a python version(either +2 or +3) 
 mouse, keyboard, pyautogui.
 Running the program is as follows:
 Either: 
-- through simply using the main.py file in the project directory or run.bat file on Windows or the run.sh for Linux/Mac(root access is going to be required for the mouse/keyboard modules).
-- through command line / terminal, navigate to the cloned project directory(BotCompose) and type either py/python/python3.. main.py
+- through simply using the main.py file in the project directory.
+- through command line / terminal, navigate to the cloned project directory(BotCompose) and type either py / python / python3 main.py
 - through an ide. Simply run the program through a python supporting ide or text editor such as PyChar, VSCode or any other ide with python support.
 
 sources:
-https://github.com/boppreh/mouse
-https://github.com/boppreh/keyboard
-https://pyautogui.readthedocs.io/en/latest/
+https://github.com/boppreh/mouse\n
+https://github.com/boppreh/keyboard\n
+https://pyautogui.readthedocs.io/en/latest/\n
