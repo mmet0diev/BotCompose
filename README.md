@@ -12,6 +12,6 @@ Either:
 - through an ide. Simply run the program through a python supporting ide or text editor such as PyChar, VSCode or any other ide with python support.
 
 sources:
-https://github.com/boppreh/mouse\n
-https://github.com/boppreh/keyboard\n
-https://pyautogui.readthedocs.io/en/latest/\n
+https://github.com/boppreh/mouse
+https://github.com/boppreh/keyboard
+https://pyautogui.readthedocs.io/en/latest/
