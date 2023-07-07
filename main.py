@@ -1,6 +1,6 @@
 import os
 import sys
-# Add the path to the Models directory to the system path
+# Add the path of the Models directory to the system path
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path, "Models"))
 import threading
