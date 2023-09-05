@@ -26,9 +26,9 @@ def read_from_file(src_path: str):
                         print("Execution stopped.")
                         break
                     if line != "":
-                        cmd1 = line.strip().split(" ")
-                        func = cmd1[0]
-                        args = cmd1[1:]
+                        command = line.strip().split(" ")
+                        func = command[0]
+                        args = command[1:]
                         match func:
                             case "mv":
                                 x, y = map(float, args)
