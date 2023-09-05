@@ -1,0 +1,10 @@
+repeat 9 50
+sleep 2
+mvclck 1730 700 l
+sleep 1.5
+mvclck 1710 500 l
+sleep 1.5
+mvclck 1730 700 l
+sleep 1.5
+mvclck 1730 620 l
+sleep 2
