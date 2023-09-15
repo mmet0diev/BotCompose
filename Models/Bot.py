@@ -105,6 +105,9 @@ class Bot:
             args = cmd[1:]
             commands.append((func, args))
         for j in range(reps):  # repeat the commands reps times
+            if self.kb.check_key_pressed("esc"):
+                print("Execution stopped.")
+                break
             for func, args in commands:
                 match func:
                     case "mv":
@@ -196,6 +199,9 @@ class Bot:
         parts = command[1:]
         for i in range(reps):
             index = 0
+            if self.kb.check_key_pressed("esc"):
+                print("Execution stopped.")
+                break
             while index < len(parts):
                 cmd = command[index]
                 if cmd == "mv":
