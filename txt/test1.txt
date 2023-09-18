@@ -1,2 +1,17 @@
-repeat 100 1
-clck l
+sleep 1.5
+mvclck 1730 590 l
+sleep 1
+shoot
+sleep 1
+mvclck 1730 450 l
+sleep 1
+mvclck 1730 590 l
+sleep 1
+shoot
+sleep 1.5
+mvclck 1730 515 l
+sleep 1
+mvclck 1730 390 l
+sleep 1
+mvclck 1730 590 l
+sleep 2
