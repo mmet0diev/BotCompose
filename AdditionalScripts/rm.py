@@ -13,7 +13,7 @@ if len(sys.argv) < 2:
     print("Provide the file path as an argument.")
     sys.exit(1)
 
-file_to_delete = sys.argv[1]
+file_to_delete = sys.argv[1]    
 delete_file(file_to_delete)
 
 
