@@ -98,8 +98,8 @@ class Mouse:
                 print("Image not found.")
                 return
             self.mvclck(img_center[0], img_center[1], btn=btn)
-        except Exception:
-            print("Image/path not found.")
+        except Exception as e:
+            print(f"Exception caught:\n {e}")
 
     # Write to mouse events output.txt file
     def write_to_file(self):
