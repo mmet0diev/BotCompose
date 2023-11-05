@@ -16,8 +16,6 @@ if len(sys.argv) < 2:
 file_to_delete = sys.argv[1]
 delete_file(file_to_delete)
 
-
-
 # We define a delete_file function that attempts to delete the specified file using os.remove().
 # We check the command-line arguments, and if there's at least one argument, we assume it's the file path and pass it to the delete_file function.
 # If the file is successfully deleted, it prints a success message; otherwise, it prints an error message along with the exception details.
