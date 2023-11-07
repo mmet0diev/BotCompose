@@ -32,7 +32,7 @@ class Mouse:
     def mv(self, x: int, y: int, dur=0):
         # print("mv called")
         time.sleep(0.1)
-        m.move(x, y, duration=dur)
+        m.move(x, y, duration=dur, absolute=True)
 
     # Click a left, right, middle(scroll) mouse btn
     def clck(self, btn: str):
@@ -50,15 +50,15 @@ class Mouse:
     def mvclck(self, x: int, y: int, btn: str):
         time.sleep(0.2)
         if (btn == "l"):
-            m.move(x, y)
+            m.move(x, y, duration=0, absolute=True)
             time.sleep(0.1)
             m.click()
         elif (btn == "r"):
-            m.move(x, y)
+            m.move(x, y, duration=0, absolute=True)
             time.sleep(0.1)
             m.right_click()
         elif (btn == "m"):
-            m.move(x, y)
+            m.move(x, y, duration=0, absolute=True)
             time.sleep(0.1)
             m.click(button="middle")
         else:
