@@ -1,0 +1,6 @@
+sleep 2
+repeat 4 4
+mv 100 100
+mv 980 500
+mv 500 1000
+sleep 1
