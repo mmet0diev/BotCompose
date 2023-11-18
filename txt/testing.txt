@@ -1,0 +1,223 @@
+sleep 2
+press s
+sleep 0.5
+mvclck 680 180 l
+sleep 0.5
+mvclck 1000 850 l
+sleep 1
+
+------------------------------------------------------------------
+mvclck 1435 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
+
+------------------------------------------------------------------
+mvclck 1490 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
+
+------------------------------------------------------------------
+mvclck 1550 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
+
+------------------------------------------------------------------
+mvclck 1600 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
+
+------------------------------------------------------------------
+mvclck 1640 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
+
+------------------------------------------------------------------
+mvclck 1690 575 l
+------------------------------------------------------------------
+
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
