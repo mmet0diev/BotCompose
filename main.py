@@ -238,21 +238,27 @@ class AppUI():
         self.root = tk.Tk()
         self.root.title("Bot Controller")
         if width == 1366 and height == 768:
-            self.root.geometry("600x350")
+            self.root.geometry("600x400")
         elif width == 1920 and height == 1080:
-            self.root.geometry("900x500")
+            self.root.geometry("900x550")
         self.root.resizable(False, False)
-        self.root.columnconfigure([0, 1, 2, 3, 4, 5], pad=20)
-        self.root.rowconfigure([0, 1, 2, 3, 4], pad=20)
+        self.root.columnconfigure([0, 1, 2, 3], pad=20)
+        self.root.rowconfigure([0, 1, 2, 3, 4, 5, 6, 7], pad=20)
 
         # Define widgets
         bot_label = tk.Label(self.root, text="BOTCOMPOSE", font=("Helvetica", 20), pady=5)
         screen_res_label = tk.Label(self.root, text=f"Screen Resolution: {get_screen_resolution()}", font=("Helvetica", 12))
-        mouse_file_path = tk.Entry(self.root)
-        kb_file_path = tk.Entry(self.root)
 
-        mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=lambda: self.callMouseRec(mouse_file_path.get()))
-        kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=lambda: self.callKbRec(kb_file_path.get()))
+        mouse_filepath_entry = tk.Entry(self.root)
+        kb_filepath_entry = tk.Entry(self.root)
+        mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=lambda: self.callMouseRec(mouse_filepath_entry.get()))
+        kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=lambda: self.callKbRec(kb_filepath_entry.get()))
+
+        mouse_label1 = tk.Label(self.root, text="Enter output file path. -->")
+        mouse_label2 = tk.Label(self.root, text="Enter number of re-plays -->")
+        kb_label1 = tk.Label(self.root, text="Enter output file path. -->")
+        kb_label2 = tk.Label(self.root, text="Enter number of re-plays -->")
+
         mouse_play_entry = tk.Entry(self.root, name="1")
         mouse_play_btn = tk.Button(self.root, text="play mouse", pady=5, command=lambda: self.replay_mouse_btn_clicked(mouse_play_entry))
         kb_play_entry = tk.Entry(self.root)
@@ -272,22 +278,27 @@ class AppUI():
         # span across all columns
         bot_label.grid(row=0, column=0, columnspan=4)
         screen_res_label.grid(row=1, column=0, columnspan=4)
-        mouse_rec_btn.grid(row=2, column=0)
-        mouse_file_path.grid(row=2, column=1)
-        mouse_play_entry.grid(row=2, column=2)
-        mouse_play_btn.grid(row=2, column=3)
 
-        kb_rec_btn.grid(row=3, column=0)
-        kb_file_path.grid(row=3, column=1)
-        kb_play_entry.grid(row=3, column=2)
-        kb_play_btn.grid(row=3, column=3)
+        mouse_label1.grid(row=2, column=0)
+        mouse_filepath_entry.grid(row=2, column=1)
+        mouse_rec_btn.grid(row=2, column=2)
+        mouse_label2.grid(row=4, column=0)
+        mouse_play_entry.grid(row=4, column=1)
+        mouse_play_btn.grid(row=4, column=2)
 
-        file_read_label.grid(row=4, column=0)
-        file_input_field.grid(row=4, column=1)
-        file_read_btn.grid(row=4, column=2)
-        manual_label.grid(row=5, column=0)
-        man_input_field.grid(row=5, column=1)
-        man_run_btn.grid(row=5, column=2)
+        kb_label1.grid(row=3, column=0)
+        kb_filepath_entry.grid(row=3, column=1)
+        kb_rec_btn.grid(row=3, column=2)
+        kb_label2.grid(row=5, column=0)
+        kb_play_entry.grid(row=5, column=1)
+        kb_play_btn.grid(row=5, column=2)
+
+        file_read_label.grid(row=6, column=0)
+        file_input_field.grid(row=6, column=1)
+        file_read_btn.grid(row=6, column=2)
+        manual_label.grid(row=7, column=0)
+        man_input_field.grid(row=7, column=1)
+        man_run_btn.grid(row=7, column=2)
 
         # Center the bot_label widget
         self.root.grid_columnconfigure(0, weight=1)
