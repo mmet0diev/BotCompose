@@ -248,8 +248,8 @@ class AppUI():
         # Define widgets
         bot_label = tk.Label(self.root, text="BOTCOMPOSE", font=("Helvetica", 20), pady=5)
         screen_res_label = tk.Label(self.root, text=f"Screen Resolution: {get_screen_resolution()}", font=("Helvetica", 12))
-        mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=bot.rec_mouse)
-        kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=bot.rec_kb)
+        mouse_rec_btn = tk.Button(self.root, text="rec mouse", pady=5, command=lambda: bot.rec_mouse())
+        kb_rec_btn = tk.Button(self.root, text="rec kb", pady=5, command=lambda: bot.rec_kb())
         mouse_play_entry = tk.Entry(self.root, name="1")
         mouse_play_btn = tk.Button(self.root, text="play mouse", pady=5, command=lambda: self.replay_mouse_btn_clicked(mouse_play_entry))
         kb_play_entry = tk.Entry(self.root)
