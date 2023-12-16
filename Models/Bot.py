@@ -35,6 +35,7 @@ class Bot:
         else:
             self.imgs_num = imgs_num
 
+
     # Mouse controls:
     # More of a testing function
     def getPos(self):
@@ -291,7 +292,8 @@ class Bot:
                     break
 
     # Call the record function from the Mouse
-    def rec_mouse(self):
+    def rec_mouse(self, output_file="txt/mouse_events.txt"):
+        self.m.output_file = output_file
         self.m.record()
 
     # Call the play function from the Mouse
@@ -299,7 +301,8 @@ class Bot:
         self.m.play()
 
     # Call the record function from KB
-    def rec_kb(self):
+    def rec_kb(self, output_file="txt/kb_events.txt"):
+        self.kb.output_file = output_file
         self.kb.record()
 
     # Call the play function from KB
