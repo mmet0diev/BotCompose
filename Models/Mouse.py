@@ -107,7 +107,6 @@ class Mouse:
             with open(self.output_file, 'w') as f:
                 for evs in self.events:
                     f.write(f"{evs}\n")
-                f.close()
 
     # Clear the current output.txt contents
     def clear_file(self):

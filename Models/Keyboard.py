@@ -46,7 +46,6 @@ class Keyboard:
         with open(self.output_file, 'w') as f:
             for evs in self.events:
                 f.write(f"{evs}\n")
-            f.close()
 
     # Stop recording the keyboard events
     def stop_recording(self):
