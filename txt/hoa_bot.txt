@@ -1,0 +1,115 @@
+sleep 3
+repeat 2 664
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+mvclck 600 350 r
+mvclck 1110 600 r
+mvclck 1110 350 r
+mvclck 800 600 r
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\blue.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\blue1.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\bluegloves.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\bluesword.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\fangs\green.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\green.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\green1.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\greencape.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\greeness.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\greenring.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\greentorso.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\pink.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\mounticon.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\lockpickicon.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\slash.png l 0.7
+sleep 1
+clckimg C:\Users\MM\m\BotCompose\imgs\dso\whiteess.png l 0.7
+sleep 1
+
+sleep 2
+press s
+sleep 0.5
+mvclck 680 180 l
+sleep 0.5
+mvclck 1000 850 l
+sleep 1
+
+mvclck 1490 575 l
+mvclck 1360 630 r
+mvclck 1430 630 r
+mvclck 1530 630 r
+mvclck 1600 630 r
+mvclck 1680 630 r
+mvclck 1750 630 r
+mvclck 1830 630 r
+
+mvclck 1360 710 r
+mvclck 1430 710 r
+mvclck 1530 710 r
+mvclck 1600 710 r
+mvclck 1680 710 r
+mvclck 1750 710 r
+mvclck 1830 710 r
+
+mvclck 1360 790 r
+mvclck 1430 790 r
+mvclck 1530 790 r
+mvclck 1600 790 r
+mvclck 1680 790 r
+mvclck 1750 790 r
+mvclck 1830 790 r
+
+mvclck 1360 860 r
+mvclck 1430 860 r
+mvclck 1530 860 r
+mvclck 1600 860 r
+mvclck 1680 860 r
+mvclck 1750 860 r
+mvclck 1830 860 r
