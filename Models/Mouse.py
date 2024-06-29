@@ -4,7 +4,6 @@ import time
 import os
 import pyautogui as pag
 
-
 class Mouse:
 
     # The Mouse constructor
