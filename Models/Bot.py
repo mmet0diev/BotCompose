@@ -10,12 +10,16 @@ class Bot:
     try:
         imgs_path = os.path.join(os.getcwd(), "imgs")
     except Exception as e:
+        imgs_path = os.getcwd()
         print("Folder/Directory not found.")
 
     # get initial number of image files in imgs folder
     def get_imgs_num(self) -> int:
-        imgs_list = os.listdir(self.imgs_path)
-        return len(imgs_list)
+        try:
+            imgs_list = os.listdir(self.imgs_path)
+            return len(imgs_list)
+        except:
+            print('"imgs" path/folder not found')
 
     # Bot constructor
     def __init__(
