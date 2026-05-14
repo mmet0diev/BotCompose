@@ -9,7 +9,7 @@ Running the program is as follows:
 Either: 
 - through simply using the main.py file in the project directory.
 - through command line / terminal, navigate to the cloned project directory(BotCompose) and type either py / python / python3 main.py
-- through an ide. Simply run the program through a python supporting ide or text editor such as PyChar, VSCode or any other ide with python support.
+- through an ide. Simply run the program through a python supporting ide or text editor such as PyCharm, VSCode or any other ide with python support.
 
 sources:
 https://github.com/boppreh/mouse
